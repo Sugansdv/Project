@@ -1,0 +1,539 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(21, 71, 118);
+    color: white;
+    padding: 10px 50px;
+    font-size: 18px;
+    z-index: 1000;
+}
+
+.top-bar .top-info span {
+    margin-right: 30px;
+}
+
+.top-bar i {
+    color: red;
+    margin-right: 5px;
+}
+
+.social-icons i {
+    margin-left: 15px;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.nav-bar {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    font-family: sans-serif;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    color: rgb(232, 11, 11);
+    font-size: 2em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links ul {
+    list-style: none;
+    margin: 0 15px;
+}
+
+.nav-links a {
+    font-size: 20px;
+    text-decoration: none;
+    color: darkslategray;
+}
+
+.nav-links ul {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.start-btn {
+    margin-left: 100px;
+    background-color: rgb(232, 12, 12);
+    color: white !important;
+    padding: 8px 30px;
+    border-radius: 30px;
+}
+.start-btn:hover{
+    background-color: rgb(26, 66, 101);
+}
+.nav-links a:hover{
+    color: red;
+}
+.home {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+        url('./assets/Hero_BG.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 90vh;
+    position: relative;
+}
+
+.reservation-box {
+    position: absolute;
+    background-color: hsl(212, 95%, 15%);
+    color: white;
+    padding: 25px;
+    border-radius: 20px;
+    width: 40%;
+    height: 90%;
+    text-align: center;
+    top: 30px;
+    left: 30px;
+}
+
+.reservation-box h2 {
+    margin: 20px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px 5px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+
+}
+.input-group:hover{
+    transform: translateY(-10px);
+}
+
+.car-type {
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.input-group i {
+    color: red;
+    padding: 0 20px;
+
+}
+
+.date-group {
+    margin: 10px 0;
+    display: flex;
+}
+
+.date-btn {
+    margin: 5px;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 50%;
+    font-size: 18px;
+    color: rgb(122, 119, 119);
+}
+
+.date-btn i {
+    color: black;
+}
+.cal1{
+    position: relative;
+}
+.cal{
+    position: absolute;
+    top: 57%;
+    left: 1%;
+    opacity: 0;
+}
+.cal2{
+    position: relative;
+}
+.caln{
+    position: absolute;
+    top: 68%;
+    left: 1%;
+    z-index: 10;
+    opacity: 0;
+}
+.tim, .tim1{
+    position: relative;
+}
+.time{
+    position: absolute;
+    top: 57%;
+    left: 52%;
+    opacity: 0;
+}
+.time2{
+    position: absolute;
+    top: 68%;
+    left: 51%;
+    opacity: 0;
+}
+
+.book-btn {
+    width: 50%;
+    padding: 10px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bolder;
+    margin: 20px;
+}
+.book-btn:hover{
+    background-color: rgb(26, 66, 101);
+}
+/* footer */
+.footer-container {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+    font-size: 1.2em;
+}
+.about h3{
+    margin-left:50px;
+    margin-top: 15px;
+}
+.about p{
+    margin: 20px 0;
+    text-align: center;
+}
+.quick-link ul li{
+    list-style: none;
+    padding: 10px;
+    
+}
+.quick-link  a{
+    text-decoration: none;
+    color: white;
+}
+.quick-link a:hover{
+    color: red;
+}
+.quick-link{
+    margin-top: 20px;
+}
+.business-hours{
+    margin-top: 20px;
+}
+.business-hours h5{
+    padding: 10px 0;
+    font-weight: normal;
+}
+
+.contact-info{
+    margin-top: 20px;
+    margin-right: 30px;
+}
+.contact-info h5{
+    padding: 10px 0;
+    font-weight: normal;
+}
+.contact-info i{
+    color: red;
+}
+.footer-social-icons{
+    margin-left: 80%;
+} 
+.footer-social-icons i{
+    color: red;
+    background-color: white;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 26px;
+    margin-left: 10px;
+}
+.subscribe-box {
+    margin: 20px;
+    position: relative;
+}
+.subscribe-box input {
+    margin-top: 20px;
+    position: relative;
+    padding: 30px 100px;
+    border: none;
+    border-radius: 20px ;
+    outline: none;
+    font-size: 20px;
+}
+.subscribe-box button {
+    position: absolute;
+    padding: 20px;
+    background-color: rgb(14, 14, 49);
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    bottom: 10px;
+    left: 65%;
+    font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        padding: 10px 0;
+        overflow: hidden;
+    }
+
+    .top-bar .social-icons {
+        margin-top: 10px;
+    }
+
+    .nav-bar {
+        margin-top: 110px;
+        flex-direction: column;
+    }
+
+    .nav-bar .logo h1 {
+        font-size: 1.3em;
+    }
+
+    .nav-bar .nav-links a {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .nav-bar .start-btn {
+        font-size: 18px;
+        padding: 10px 10px;
+    }
+
+    .start-btn {
+        margin-left: 20px;
+    }
+
+    .home {
+        height: 60vh;
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
+
+    .reservation-box {
+        width: 50%;
+        height: 58vh;
+        left: 15px;
+        top: 8px;
+        border-radius: 10px;
+    }
+
+    .reservation-box h2 {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .car-type {
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    .input-group {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    .input-group i {
+        padding: 0 10px;
+    }
+
+    .input-field {
+        font-size: 12px;
+    }
+
+    .date-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .date-group {
+        margin: 0;
+    }
+
+    .book-btn {
+        margin: 5px 0;
+        padding: 5px;
+    }
+
+    
+.footer-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    margin:0;
+    gap:0;
+    overflow-x: hidden;
+}
+.footer-social-icons {
+    margin-left: 0;
+}
+
+.footer-social-icons i {
+    margin: 10px 0;
+    padding: 15px;
+    font-size: 20px;
+}
+
+}
+@media screen and (max-width: 425px) {
+    
+    .top-bar {
+        padding: 10px;
+        overflow: hidden;
+    }
+
+    .top-info {
+        display: flex;
+        flex-direction: column;
+        font-size: 15px;
+        margin-left: 40px;
+    }
+
+    .top-info i {
+        padding: 5px 0;
+    }
+
+    .social-icons i {
+        margin-left: -5px;
+    }
+
+    .nav-bar {
+        margin-top: 160px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 0;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        padding: 30px 0;
+    }
+
+    .nav-bar .start-btn {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+
+    .home .reservation-box {
+        width: 100%;
+        height: 58vh;
+        left: 0;
+        top: 163px;
+        border-radius: 0;
+    }
+
+    .reservation-box h2 {
+        font-size: 14px;
+    }
+
+    .book-btn {
+        font-size: 14px;
+    }
+    .home {
+        height: 60vh;
+        background-size: contain;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
+
+    
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0px;
+        height: auto;
+        padding: 0px;
+        margin:0;
+        gap:0;
+        overflow-x: hidden;
+    }
+    .footer-social-icons {
+        margin-left: 0;
+    }
+    
+    .footer-social-icons i {
+        margin: 10px 0;
+        padding: 15px;
+        font-size: 20px;
+    }
+    .subscribe-box input {
+        margin-top: 20px;
+        padding: 10px 18px;
+        font-size: 20px;
+    }
+    
+    .subscribe-box button {
+        position: absolute;
+        padding: 10px;
+        bottom: 2.5px;
+        left: 65%;
+        font-size: 14px;
+    }
+}

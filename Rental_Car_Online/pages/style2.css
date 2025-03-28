@@ -1,0 +1,349 @@
+.our-service-container {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+        url('../assets/statsbg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.our-service-container a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+.our-service-container h2 {
+    font-size: 3em;
+}
+
+.our-service-container nav {
+    margin-top: 10px;
+}
+
+
+/*  */
+.dashboard {
+    margin: 30px;
+}
+
+.dashboard h1 {
+    font-size: 3.2em;
+}
+
+.dashboard-container {
+    margin-top: 50px;
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.dashboard-card {
+    width: 45%;
+    background: white;
+    box-shadow: 4px 4px 0px rgb(238, 5, 5);
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.dashboard-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(88, 87, 87);
+    margin-top: 10px;
+}
+
+.dashboard-text h2 {
+    margin: 25px 0;
+    font-size: 3em;
+}
+
+.dashboard-card .icon {
+    border-radius: 80% 80% 10% 80%;
+}
+
+.dashboard-card .icon i {
+    padding: 30px;
+    font-size: 46px;
+    color: white;
+}
+
+.dashboard-card .green {
+    background-color: green;
+}
+
+.dashboard-card .yellow {
+    background-color: orange;
+}
+
+.dashboard-card .red {
+    background-color: rgb(181, 4, 4);
+}
+
+.dashboard-card hr {
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+.dashboard-view {
+    font-size: 1.5em;
+    margin: 40px 0;
+    font-weight: bold;
+
+}
+
+.fa-arrow-right {
+    margin-left: 20px;
+    color: rgb(103, 102, 102);
+}
+
+/* all booking */
+.booking-container h1 {
+    color: red;
+    font-size: 3em;
+    margin: 50px;
+}
+
+.booking-card img {
+    width: 15%;
+    border: 1px solid black;
+    padding: 0 20px;
+    margin-left: 60px;
+}
+
+.booking-card {
+    display: flex;
+    padding: 60px 0;
+}
+.booking-container{
+    margin-top: 120px;
+}
+.booking-details {
+    margin-top: 15px;
+    position: relative;
+    display: flex;
+    gap: 70px;
+    padding: 0 25px;
+}
+
+.booking-details p {
+    font-size: 1.5em;
+}
+
+.car-name span {
+    color: brown;
+}
+
+.upcoming,
+.cancelled,
+.in-progress {
+    position: absolute;
+    margin: 20px 20px;
+    border-radius: 20px;
+    padding: 10px 50px;
+    right: -20px;
+    top: 65px;
+}
+
+.upcoming {
+    background-color: rgb(199, 221, 244);
+    color: rgb(4, 4, 114);
+}
+
+.cancelled {
+    background-color: rgb(140, 230, 183);
+    color: rgb(29, 53, 40);
+}
+
+.in-progress {
+    background-color: rgb(210, 152, 105);
+    color: rgb(74, 51, 32);
+}
+
+@media screen and (max-width: 768px) {
+    .our-service-container h2 {
+        font-size: 2.5em;
+    }
+
+    /*  */
+    .dashboard {
+        margin: 20px;
+    }
+
+    .dashboard h1 {
+        font-size: 2.5em;
+    }
+
+    .dashboard-container {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    .dashboard-title {
+        font-size: 1.6em;
+        margin-top: 0px;
+    }
+
+    .dashboard-text h2 {
+        margin: 25px 0;
+        font-size: 1.8em;
+    }
+
+    .dashboard-card .icon {
+        border-radius: 80% 80% 10% 80%;
+    }
+
+    .dashboard-card .icon i {
+        padding: 28px;
+        font-size: 40px;
+        color: white;
+    }
+
+    .dashboard-view {
+        font-size: 1.3em;
+
+    }
+
+    /* all booking */
+    .booking-container h1 {
+        font-size: 2.5em;
+        margin: 30px;
+    }
+
+    .booking-card img {
+        width: 20%;
+        padding: 0 10px;
+        margin-left: 10px;
+    }
+
+    .booking-card {
+        display: flex;
+        padding: 40px 0;
+    }
+
+    .booking-details {
+        margin-top: 10px;
+        gap: 10px;
+        padding: 0 15px;
+    }
+
+    .booking-details p {
+        font-size: 1em;
+    }
+    .upcoming{
+        margin: 20px 20px;
+        padding: 10px 30px;
+        right: -14px;
+    }
+    .cancelled {
+        margin: 20px 20px;
+        padding: 10px 30px;
+        right: -14px;
+        top: 40px;
+    }
+
+    .in-progress {
+        margin: 20px 20px;
+        padding: 10px 30px;
+        right: -14px;
+        top: 60px;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+    .our-service-container h2 {
+        font-size: 2em;
+    }
+
+    /*  */
+    .dashboard {
+        margin: 10px;
+    }
+
+    .dashboard h1 {
+        font-size: 2.2em;
+    }
+
+    .dashboard-container {
+        margin-top: 20px;
+        gap: 30px;
+    }
+
+    .dashboard-card {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .dashboard-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: rgb(88, 87, 87);
+        margin-top: 5px;
+    }
+
+    .dashboard-text h2 {
+        margin: 20px 0;
+        font-size: 1.8em;
+    }
+
+
+    .dashboard-card .icon i {
+        padding: 20px;
+        font-size: 34px;
+        color: white;
+    }
+
+    .dashboard-view {
+        font-size: 1.3em;
+        margin: 40px 0;
+        font-weight: bold;
+
+    }
+     /* all booking */
+.booking-container h1 {
+    font-size: 2em;
+    margin: 30px;
+}
+
+.booking-card img {
+    width: 20%;
+    padding: 2px;
+    margin-left: 15px;
+}
+
+.booking-card {
+    padding: 45px 0;
+}
+
+.booking-details {
+    margin-top: 10px;
+    gap: 5px;
+    padding: 0 5px;
+}
+
+.booking-details p {
+    font-size: 0.8em;
+}
+.upcoming,  .cancelled , .in-progress {
+    padding: 10px 30px;
+    right: -20px;
+    top: 75px;
+}
+}

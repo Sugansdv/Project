@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="top-info">
+                <span><i class="fas fa-map-marker-alt"></i> Find Location</span>
+                <span><i class="fas fa-phone"></i> +32635489322</span>
+                <span><i class="fas fa-envelope"></i> Easycar@gmail.com</span>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <div class="logo">
+                <img src="./assets/LOGO.png" alt="Easy Car Logo">
+                <h1>Easy Car</h1>
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./pages/services.html">Services</a></li>
+                    <li><a href="./pages/dashboard.html">Dashboard</a></li>
+                    <li><a href="./pages/contact.html">Contact Us</a></li>
+                </ul>
+                <a href="./pages/get_started.html" class="start-btn">Get Started</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="home">
+            <div class="reservation-box">
+                <h2>CONTINUE CAR RESERVATION</h2>
+                <input type="text" class="input-field car-type" placeholder="Enter your car type">
+                <div class="input-group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" class="input-field" placeholder=" Enter pickup location">
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" class="input-field" placeholder=" Enter drop location">
+                </div>
+                <div class="date-group">
+                    <button class="date-btn cal1"><i class="fa-solid fa-calendar"></i> Pick-up</button>
+                    <button class="date-btn tim1"><i class="fa-solid fa-clock"></i> Pick-up</button>
+                </div>
+                <div class="cal">
+                    <label for="date"></label>
+                    <input type="date" id="date" name="date">
+                </div>
+                <div class="caln">
+                    <label for="date"></label>
+                    <input type="date" id="date" name="date">
+                </div>
+                <div class="date-group">
+                    <button class="date-btn cal2"><i class="fa-solid fa-calendar"></i> Drop off</button>
+                    <button class="date-btn tim"><i class="fa-solid fa-clock"></i> Drop-off</button>
+                </div>
+                <div class="time">
+                    <label for="time"></label>
+                    <input type="time" id="time" name="time">
+                </div>
+                <div class="time2">
+                    <label for="time"></label>
+                    <input type="time" id="time" name="time">
+                </div>
+                <button class="book-btn">BOOK NOW</button>
+            </div>
+        </section>
+
+        <section class="feature-container">
+            <h1>Easy Car <span>Feature</span></h1>
+            <p>
+                Maintains a safe distance from the vehicle ahead, automatically<br> adjusting speed to match traffic
+                flow.
+            </p>
+
+            <div class="car-image">
+                <img src="./assets/car-removebg-preview.png" alt="Car">
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-trophy icon"></i>
+                    <div class="feature-description">
+                        <h2>First Class Service</h2>
+                        <p>"Experience Excellence <br>- Ride First Class"</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-description tag">
+                        <h2>Quality at Minimum</h2>
+                        <p>"Premium Quality, Minimal Cost!"</p>
+                    </div>
+                    <i class="fas fa-tag icon"></i>
+                </div>
+                <div class="feature fea1">
+                    <i class="fas fa-road icon"></i>
+                    <div class="feature-description">
+                        <h2>24/7 Road Assistance</h2>
+                        <p>"Anytime Anywhere, We've Got Your Back 24/7!"</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-description key">
+                        <h2>Free Pickup and Drop off</h2>
+                        <p>"Convenience on Us - Free Pickup & Drop."</p>
+                    </div>
+                    <i class="fas fa-key icon"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-container">
+            <div class="about-left">
+                <h1><span class="highlight">About</span> Easy Car Rental</h1>
+                <p class="subtext">Maintains a safe distance from the vehicle ahead, automatically <br>adjusting speed
+                    to
+                    match traffic flow.</p>
+
+                <div class="info-section1">
+                    <div class="card">
+                        <img src="./assets/vision-removebg-preview (1).png" alt="Vision Icon" class="abt-img">
+                        <h3>Our Vision</h3>
+                        <p>“Redefining Mobility, Empowering journeys.”</p>
+                    </div>
+                    <div class="card">
+                        <img src="./assets/mission-removebg-preview (1).png" alt="Mission Icon" class="abt-img">
+                        <h3>Our Mission</h3>
+                        <p>"To provide reliable, affordable, and customer car rental solutions and convenience at every
+                            mile"</p>
+                    </div>
+                </div>
+
+                <div class="info-section2">
+                    <div class="experience">
+                        <p><span class="exp">10</span><br>Year of Experience</p>
+                    </div>
+
+                    <div class="features">
+                        <ul>
+                            <li><span>&#10004;</span> First Class Service</li>
+                            <li><span>&#10004;</span> Quality at minimum</li>
+                            <li><span>&#10004;</span> Free pick and drop</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-right">
+                <img src="./assets/key.jpeg" alt="Car Keys" class="main-image">
+                <img src="./assets/carzin.jpg" alt="Travel Car" class="sub-image">
+            </div>
+
+        </section>
+
+        <section class="stats-container">
+            <div class="stat-box">
+                <i class="fas fa-thumbs-up stat-icon"></i>
+                <div class="stat-number">829+</div>
+                <div class="stat-text">Happily Client</div>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-car stat-icon"></i>
+                <div class="stat-number">56+</div>
+                <div class="stat-text">Number of Car</div>
+            </div>
+            <div class="stat-box stat">
+                <i class="fas fa-building stat-icon"></i>
+                <div class="stat-number">127+</div>
+                <div class="stat-text">Car Center</div>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-clock stat-icon"></i>
+                <div class="stat-number">589+</div>
+                <div class="stat-text">Total Kilometers</div>
+            </div>
+        </section>
+
+        <section class="rent-container">
+            <div class="rent-content">
+                <h2>Rent Your Car</h2>
+                <h1>Interested in Renting?</h1>
+                <p>Don't hesitate and send us a message.</p>
+                <div class="rent-btn-container">
+                    <button class="rent-btn">Whatsapp</button>
+                    <button class="rent-btn">Contact Us</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-container">
+        <div class="footer-column about">
+            <h3>About US</h3>
+            <p>Maintains a safe distance from <br>the vehicle ahead automatically <br>adjusting speed to match traffic
+                flow.</p>
+            <div class="subscribe-box">
+                <input type="email" placeholder="Enter your mail">
+                <button>Subscribe</button>
+            </div>
+        </div>
+
+        <div class="footer-column quick-link">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./pages/services.html">Services</a></li>
+                <li><a href="./pages/dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column business-hours">
+            <h3>Business hour</h3>
+            <h5>Mon - Friday:<br> 09.00 am to 07.00 pm</h5>
+            <h5>Saturday:<br> 10.00 am to 05.00 pm</h5>
+            <h5>Vacation:<br> All Sunday is our vacation</h5>
+        </div>
+
+        <div class="footer-column contact-info">
+            <h3>Contact Info</h3>
+            <h5><i class="fas fa-phone"></i> +32635489322</h5>
+            <h5><i class="fas fa-envelope"></i> Easycar@gmail.com</h5>
+        </div>
+        <div class="footer-social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+</body>
+
+</html>
