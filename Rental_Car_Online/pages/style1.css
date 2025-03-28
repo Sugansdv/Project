@@ -295,7 +295,9 @@ h2 span {
         padding: 10px 0;
         text-align: center;
     }
-
+    .boxx{
+        margin-bottom: 30px;
+    }
 
     .stat-icon {
         font-size: 18px;
