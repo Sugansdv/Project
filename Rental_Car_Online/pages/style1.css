@@ -132,6 +132,8 @@ h2 span {
 }
 
 .client-reviews{
+    
+    margin-top: 100px;
     background-color: #f8f8f8;
     text-align: center;
     padding: 50px 20px;
@@ -146,7 +148,6 @@ h2 span {
 .client-reviews h2 span {
     color: red;
 }
-
 .reviews-container {
     display: flex;
 }
@@ -290,7 +291,7 @@ h2 span {
 }
 /* stats */
 .stats-container {
-        height: 105vh;
+        height: 110vh;
         padding: 10px 0;
         text-align: center;
     }
@@ -322,6 +323,7 @@ h2 span {
 }
 
 .client-reviews{
+    margin-top: 50px;
     padding: 20px 0;
 }
 .review-card {
