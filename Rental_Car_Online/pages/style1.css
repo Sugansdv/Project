@@ -298,19 +298,19 @@ h2 span {
 
 
     .stat-icon {
-        font-size: 20px;
-        padding: 15px;
+        font-size: 18px;
+        padding: 10px;
         border-radius: 80% 80% 10% 80%;
     }
 
     .stat-number {
-        font-size: 20px;
+        font-size: 18px;
         margin-top: 10px;
 
     }
 
     .stat-text {
-        font-size: 20px;
+        font-size: 18px;
         margin-top: 10px;
     }
 
@@ -323,7 +323,7 @@ h2 span {
 }
 
 .client-reviews{
-    margin-top: 100px;
+    
     padding: 20px 0;
 }
 .review-card {
