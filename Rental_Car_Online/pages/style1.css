@@ -227,19 +227,19 @@ h2 span {
 
 
     .stat-icon {
-        font-size: 34px;
-        padding: 25px;
+        font-size: 30px;
+        padding: 15px;
         border-radius: 80% 80% 10% 80%;
     }
 
     .stat-number {
-        font-size: 28px;
+        font-size: 26px;
         margin-top: 20px;
 
     }
 
     .stat-text {
-        font-size: 24px;
+        font-size: 22px;
         margin-top: 10px;
     }
     .client-reviews{
