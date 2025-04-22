@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .top-banner {
+      background-color: #eeffe5;
+      font-weight: bold;
+    }
+    .active{
+      color: #2e8756 !important;
+      border-bottom: 2px solid #2e8756;
+    }
+    
+    .navbar-brand{
+      font-size: 1.3em !important;
+    }
+    .nav-item a{
+      font-size: 1.2em !important;
+      font-weight: bolder;
+    }
+    .nav-item a:hover{
+      color: darkgreen !important;
+      border-bottom: 2px solid #28a745;
+    }
+    .btn {
+      font-size: 1.05em !important;
+      border: 2px solid #2e8756;
+      color: #2e8756;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 6px 16px;
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+    }
+    
+    .btn:hover {
+      background-color: #2e8756;
+    }
+
+    .overlay-text{
+      width: 70%;
+    }
+    .hero {
+      position: relative;
+      background-image: url('./assets/hero-home\ screen.png');
+      background-size: cover;
+      background-position: center;
+      height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 40%;
+      background-color: #ffecd7b5;
+      padding: 2rem;
+      max-width: 80%;
+      text-align: center;
+      z-index: 9999;
+    }
+
+    .hero h1 {
+      font-weight: bold;
+    }
+
+    .btn-custom {
+      border: 2px solid #444;
+      padding: 10px 20px;
+      font-weight: bold;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      width: 20%;
+    }
+
+    .btn-custom span {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-custom::after {
+      content: '→';
+      font-size: 3em;
+      position: absolute;
+      right: -50px;
+      opacity: 0;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+      top: 45%;
+      transform: translateY(-50%);
+    }
+
+    .btn-custom:hover span {
+      transform: scaleX(1.1);
+    }
+
+    .btn-custom:hover::after {
+      right: 10px;
+      opacity: 1;
+    }
+
+    .features {
+      position: absolute;
+      top: 93.8%;
+      background-color:  #ffecd7b6;
+      padding: 2rem;
+      width: 80%;
+      padding: 1.5rem 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .feature-item {
+      flex: 1 1 130px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1rem;
+      text-align: center;
+    }
+    .review{
+      background-color: #eeffe5;
+    }
+
+    .object-fit-cover {
+      object-fit: cover;
+      height: 100%;
+    }
+    .feed-section{
+      margin-top: 15% ;
+    }
+
+    .badge{
+      font-size: 18px;
+      background-color: #f65035;
+    }
+
+    .zoom-hover {
+      transition: transform 0.3s ease;
+    }
+    .zoom-hover:hover {
+      transform: scale(1.05);
+    }
+    .challenge-container {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+  
+  .challenge-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      min-height: 300px; 
+      object-fit: cover;
+  }
+  
+  .overlay-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      padding: 10px;
+  }
+  
+  .btn-download {
+      background-color:  #14ae5c;
+      border: none;
+      padding: 8px 20px;
+      font-weight: bold;
+      margin-top: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      white-space: nowrap;
+  }
+
+    @media (max-width: 768px) {
+      .btn-custom {
+        width: 50%;
+      }
+      .badge{
+        font-size: 14px;
+      }
+      .features {
+        position: absolute;
+        top: 120%;
+        z-index: 9999;
+      }
+      .feed-section{
+        margin-top: 65%;
+      }
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+    }
+
+    .footer-social {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .overlay-title {
+      font-size: 2rem;
+  }
+  
+  .overlay-text {
+      font-size: 1rem;
+  }
+  
+  .btn-download {
+      padding: 10px 25px;
+      font-size: 1rem;
+  }
+  }
+
+  @media (max-width: 425px) {
+    .btn-custom {
+      width: 100%;
+    }
+    .badge{
+      font-size: 12px;
+    }
+    .features {
+      position: absolute;
+      top: 176%;
+      z-index: 9999;
+    }
+    .feed-section{
+      margin-top: 340%;
+    }
+    .challenge-image {
+      min-height: 250px;
+  }
+  
+  .overlay-title {
+      font-size: 1.3rem !important;
+      margin-bottom: 10px !important;
+      line-height: 1.3;
+  }
+  
+  .overlay-text {
+      font-size: 0.8rem !important;
+      margin-bottom: 12px !important;
+      display: block !important; 
+  }
+  
+  .btn-download {
+    margin: 0;
+      padding: 5px;
+      font-size: 15px  !important;
+  }
+  
+  .overlay-content {
+      width: 95%;
+      padding: 10px;
+  }
+}
+
+   
+
+    

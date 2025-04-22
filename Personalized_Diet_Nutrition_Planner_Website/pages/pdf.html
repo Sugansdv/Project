@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>30 Day Challenge</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+   
+  <style>
+   
+   .background-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .background-wrapper img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .content-wrapper {
+      background-color: white;
+      width: 100%;
+      max-width: 1000px;
+      padding: 20px;
+      box-sizing: border-box;
+      margin: -120px auto 0;
+      position: relative;
+      z-index: 1;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .header-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 15px;
+      border-radius: 10px;
+      gap: 15px;
+    }
+
+    .heading-box {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    h1 {
+      color: #2e8756;
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 32px;
+      color:  #2e8756;
+      margin-top: 0;
+    }
+
+    .date-box {
+      border: 2px solid #000;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 16px;
+      border-radius: 8px;
+      background-color: #fff;
+      min-width: 200px;
+      box-sizing: border-box;
+    }
+
+    
+    .goals-box {
+      background-color: #ffe59e;
+      padding: 20px 15px;
+      border-radius: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .goal {
+      display: flex;
+      align-items: center;
+      flex: 1 1 calc(33% - 15px);
+      min-height: 60px;
+      gap: 8px;
+      min-width: 150px;
+    }
+
+    .goal-number {
+      font-size: 40px;
+      font-weight: bold;
+      color: #a3be87;
+      flex-shrink: 0;
+    }
+
+    .goal-text {
+      font-size: 16px;
+      font-weight: bold;
+      color: #000;
+      line-height: 1.3;
+    }
+
+    .extra-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .box {
+      width: 100%;
+      background-color: #ffe59e;
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .box h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .last-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      gap: 15px;
+    }
+
+    .last-box {
+      flex: 0.43;
+      min-width: 250px;
+      background-color: #ffe59e;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .last-image {
+      flex: 1;
+      min-width: 50%;
+      text-align: center;
+    }
+
+    .last-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .meal-section h5 {
+      margin-bottom: 5px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .meal-section p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+    .dwn-btn{
+        padding: 15px 30px;
+        border-radius: 20px;
+        background-color: #2f8d5d;
+        color: white;
+        font-weight: bold;
+    }
+    @media (min-width: 426px) and (max-width: 768px) {
+      .background-wrapper img {
+        height: 300px;
+      }
+
+      .content-wrapper {
+        margin-top: -150px;
+        padding: 30px 20px;
+      }
+
+      .header-row {
+        flex-direction: row;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .heading-box {
+        margin-bottom: 0;
+        flex: 1;
+      }
+      
+      h1 {
+        font-size: 30px;
+      }
+      
+      h2 {
+        font-size: 40px;
+      }
+      
+      .date-box {
+        width: auto;
+        min-width: 250px;
+        margin-left: 20px;
+      }
+      
+      .goal {
+        width: calc(50% - 10px);
+      }
+      
+      .goal-number {
+        font-size: 50px;
+      }
+      
+      .goal-text {
+        font-size: 18px;
+      }
+      
+      .box {
+        width: calc(50% - 10px);
+      }
+      
+      .last-row {
+        flex-direction: row;
+      }
+      
+      .last-box {
+        width: calc(60% - 10px);
+      }
+      
+      .last-image {
+        width: calc(40% - 10px);
+      }
+    }
+
+    @media (min-width: 769px) {
+      .background-wrapper img {
+        height: 350px;
+      }
+
+      .content-wrapper {
+        margin-top: -180px;
+        padding: 40px;
+      }
+        
+      h1 {
+        font-size: 36px;
+      }
+      
+      h2 {
+        font-size: 48px;
+      }
+      
+      .goal {
+        width: calc(20% - 24px);
+      }
+      
+      .goal-number {
+        font-size: 60px;
+      }
+      
+      .goal-text {
+        font-size: 20px;
+      }
+      
+      .box {
+        width: calc(33.33% - 15px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="top-banner text-center py-3">
+        ONE STOP FOR NUTRITION PLAN AND PERSONALIZED DIET CHART !!!
+      </div>
+    
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <span class="text-success">EAT HEALTHY</span> <span class="text-primary">+</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./health.html">Eat Healthy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./resource.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./mealplan.html" >Meal Plan</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+  <main>
+    <div class="background-wrapper">
+      <img src="../assets/30 day challenge.png" alt="Background">
+  
+      <div class="content-wrapper">
+        <div class="header-row">
+          <div class="heading-box">
+            <h1>MY 30 DAY</h1>
+            <h2>CHALLENGE</h2>
+          </div>
+          <div class="date-box">
+            <div><strong>Start date:</strong></div>
+            <div><strong>End date:</strong> </div>
+          </div>
+        </div>
+  
+        <div class="goals-box">
+          <div class="goal">
+            <div class="goal-number">01</div>
+            <div class="goal-text">Handful of FRUITS</div>
+          </div>
+          <div class="goal">
+            <div class="goal-number">02</div>
+            <div class="goal-text">Palm size PROTEIN</div>
+          </div>
+          <div class="goal">
+            <div class="goal-number">03</div>
+            <div class="goal-text">2 Cups of VEGETABLES</div>
+          </div>
+          <div class="goal">
+            <div class="goal-number">04</div>
+            <div class="goal-text">Whole Food GRAINS</div>
+          </div>
+          <div class="goal">
+            <div class="goal-number">05</div>
+            <div class="goal-text">1 Glass of MILK</div>
+          </div>
+        </div>
+  
+        <div class="extra-boxes">
+          <div class="box">
+            <h2>Monday</h2>
+            <div class="meal-card">
+              <div class="meal-section">
+                <h5>BREAKFAST</h5>
+                <p>Overnight Oats + Berries<br>Egg Cups</p>
+              </div>
+              <div class="meal-section">
+                <h5>LUNCH</h5>
+                <p>Meat, Fish, Lentils<br>Whole Grains<br>Saute Veggies</p>
+              </div>
+              <div class="meal-section">
+                <h5>SNACK</h5>
+                <p>Hummus + Veggies<br>Mixed Nuts</p>
+              </div>
+              <div class="meal-section">
+                <h5>DINNER</h5>
+                <p>Vegetables + Protein in soup<br>Lentil curry + Rice</p>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <h2>Tuesday</h2>
+            <div class="meal-card">
+              <div class="meal-section">
+                <h5>BREAKFAST</h5>
+                <p>Overnight Oats + Berries<br>Egg Cups</p>
+              </div>
+              <div class="meal-section">
+                <h5>LUNCH</h5>
+                <p>Meat, Fish, Lentils<br>Whole Grains<br>Saute Veggies</p>
+              </div>
+              <div class="meal-section">
+                <h5>SNACK</h5>
+                <p>Hummus + Veggies<br>Mixed Nuts</p>
+              </div>
+              <div class="meal-section">
+                <h5>DINNER</h5>
+                <p>Vegetables + Protein in soup<br>Lentil curry + Rice</p>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <h2>Wednesday</h2>
+            <div class="meal-card">
+              <div class="meal-section">
+                <h5>BREAKFAST</h5>
+                <p>Overnight Oats + Berries<br>Egg Cups</p>
+              </div>
+              <div class="meal-section">
+                <h5>LUNCH</h5>
+                <p>Meat, Fish, Lentils<br>Whole Grains<br>Saute Veggies</p>
+              </div>
+              <div class="meal-section">
+                <h5>SNACK</h5>
+                <p>Hummus + Veggies<br>Mixed Nuts</p>
+              </div>
+              <div class="meal-section">
+                <h5>DINNER</h5>
+                <p>Vegetables + Protein in soup<br>Lentil curry + Rice</p>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <h2>Thursday</h2>
+            <div class="meal-card">
+              <div class="meal-section">
+                <h5>BREAKFAST</h5>
+                <p>Overnight Oats + Berries<br>Egg Cups</p>
+              </div>
+              <div class="meal-section">
+                <h5>LUNCH</h5>
+                <p>Meat, Fish, Lentils<br>Whole Grains<br>Saute Veggies</p>
+              </div>
+              <div class="meal-section">
+                <h5>SNACK</h5>
+                <p>Hummus + Veggies<br>Mixed Nuts</p>
+              </div>
+              <div class="meal-section">
+                <h5>DINNER</h5>
+                <p>Vegetables + Protein in soup<br>Lentil curry + Rice</p>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <h2>Friday</h2>
+            <div class="meal-card">
+              <div class="meal-section">
+                <h5>BREAKFAST</h5>
+                <p>Overnight Oats + Berries<br>Egg Cups</p>
+              </div>
+              <div class="meal-section">
+                <h5>LUNCH</h5>
+                <p>Meat, Fish, Lentils<br>Whole Grains<br>Saute Veggies</p>
+              </div>
+              <div class="meal-section">
+                <h5>SNACK</h5>
+                <p>Hummus + Veggies<br>Mixed Nuts</p>
+              </div>
+              <div class="meal-section">
+                <h5>DINNER</h5>
+                <p>Vegetables + Protein in soup<br>Lentil curry + Rice</p>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <h2>Saturday</h2>
+            <div class="meal-card">
+              <div class="meal-section">
+                <h5>BREAKFAST</h5>
+                <p>Overnight Oats + Berries<br>Egg Cups</p>
+              </div>
+              <div class="meal-section">
+                <h5>LUNCH</h5>
+                <p>Meat, Fish, Lentils<br>Whole Grains<br>Saute Veggies</p>
+              </div>
+              <div class="meal-section">
+                <h5>SNACK</h5>
+                <p>Hummus + Veggies<br>Mixed Nuts</p>
+              </div>
+              <div class="meal-section">
+                <h5>DINNER</h5>
+                <p>Vegetables + Protein in soup<br>Lentil curry + Rice</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="last-row">
+          <div class="last-box">
+            <h2>Sunday</h2>
+            <div class="meal-card">
+              <div class="meal-section">
+                <h5>BREAKFAST</h5>
+                <p>Overnight Oats + Berries<br>Egg Cups</p>
+              </div>
+              <div class="meal-section">
+                <h5>LUNCH</h5>
+                <p>Meat, Fish, Lentils<br>Whole Grains<br>Saute Veggies</p>
+              </div>
+              <div class="meal-section">
+                <h5>SNACK</h5>
+                <p>Hummus + Veggies<br>Mixed Nuts</p>
+              </div>
+              <div class="meal-section">
+                <h5>DINNER</h5>
+                <p>Vegetables + Protein in soup<br>Lentil curry + Rice</p>
+              </div>
+            </div>
+          </div>
+          <div class="last-image">
+            <img src="../assets/chart.jpg" alt="Sample Image" />
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <button class="dwn-btn" onclick="location.href='../index.html'"> DOWNLOAD 30-DAY PDF</button>
+      </div>
+    </div>
+    
+  </main>
+
+  <footer class="pt-5 pb-3">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between footer-container">
+        <div class="footer-column">
+          <h5 class="fw-bold">EAT HEALTHY +</h5>
+          <p>Eat Healthy + is a comprehensive platform, which gives an essential guide to healthy eating</p>
+          <p><strong>Terms & conditions</strong><br><strong>Privacy policy</strong></p>
+        </div>
+
+        <div class="footer-column">
+          <h6 class="fw-bold">Quick Links:</h6>
+          <p>About us<br>Advertising Policy</p>
+          <h6 class="fw-bold mt-3">Contact us:</h6>
+          <p>Phone: +91 123457890<br>Email: info@eathealthy.com</p>
+        </div>
+
+        <div class="footer-column">
+          <p><strong>Nutrition Guidelines</strong><br>News<br>Diversity & Inclusion</p>
+        </div>
+      </div>
+  
+      <div class="d-flex justify-content-between align-items-center mt-4 flex-wrap footer-container">
+        <p class="mb-0">© Eat Healthy +. All Right Reserved</p>
+        <div class="d-flex gap-3 footer-social">
+          <i class="bi bi-twitter"></i>
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-youtube"></i>
+          <i class="bi bi-linkedin"></i>
+          <i class="bi bi-box"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

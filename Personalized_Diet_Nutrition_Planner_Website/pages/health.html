@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eat Healthy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+     <style>
+    
+
+    .hero1 {
+      position: relative;
+      background-image: url('../assets/hero-eat\ healthy.png') !important;
+      background-size: cover;
+      background-position: center;
+      height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-overlay1 {
+      position: absolute;
+      top: 30%;
+      left: 10%;
+      background-color: #eeffe5;
+      padding: 2rem;
+      max-width: 80%;
+      text-align: center;
+      z-index: 9999;
+    }
+
+    .hero1 h1 {
+      font-weight: bold;
+    }
+
+    .btn-custom {
+      background-color: #14ae3c;
+      border: 2px solid #444;
+      padding: 10px 20px;
+      font-weight: bold;
+      width: 50%;
+    }
+
+    .goals-section,
+    .goals-section1 {
+      position: relative;
+      padding: 60px 0;
+    }
+
+    .goals-section h2,
+    .goals-section1 h2 {
+      font-weight: bold;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .goals-section .lead,
+    .goals-section1 .lead {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .app-badges img,
+    .app-badges1 img {
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .app-badges img:hover,
+    .app-badges1 img:hover {
+      transform: scale(1.05);
+    }
+
+    .app-badges,
+    .app-badges1 {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .text-column,
+    .text-column1 {
+      position: relative;
+      z-index: 3;
+      background: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      margin-top: 50px;
+    }
+
+    .text-column {
+      margin-left: -120px;
+      max-height: 320px;
+      overflow: hidden;
+    }
+
+    .text-column1 {
+      margin-right: -80px;
+    }
+
+    .app-image,
+    .app-image1 {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .image-column,
+    .image-column1 {
+      position: relative;
+      z-index: 2;
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    .challenge-container {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+  
+  .challenge-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      min-height: 300px;
+  }
+  
+  .overlay-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      padding: 10px;
+  }
+  .overlay-text{
+    width: 70%;
+  }
+  .goals_button{
+    background-color: #2e8756;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: none;
+  }
+  .btn-download {
+      background-color: #2e8756;
+      border: none;
+      padding: 8px 20px;
+      font-weight: bold;
+      margin-top: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      white-space: nowrap;
+  }
+
+    @media (max-width: 768px) {
+      .btn-custom {
+        width: 50%;
+      }
+      .text-column,
+      .text-column1 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 30px;
+        max-height: none;
+        padding: 20px;
+      }
+
+      .app-badges,
+      .app-badges1 {
+        justify-content: center;
+      }
+
+      .app-image,
+      .app-image1 {
+        display: block;
+        margin: 0 auto;
+        max-width: 70%;
+      }
+      .goals-section h2,
+      .goals-section1 h2 {
+        font-size: 1.4rem;
+        text-align: center;
+      }
+
+      .lead {
+        text-align: center;
+      }
+
+      .app-image,
+      .app-image1 {
+        max-width: 90%;
+      }
+
+      .text-column,
+      .text-column1 {
+        text-align: center;
+        padding: 15px;
+      }
+
+      .app-badges img,
+      .app-badges1 img {
+        height: 36px;
+      }
+      .overlay-title {
+      font-size: 2rem;
+  }
+  
+  .overlay-text {
+      font-size: 1rem;
+  }
+      .btn-download {
+      padding: 10px 25px;
+      font-size: 1rem;
+  }
+    }
+
+    @media (max-width: 425px) {
+      .btn-custom {
+        width: 100%;
+      }
+      .overlay-title {
+      font-size: 1.3rem !important;
+      margin-bottom: 10px !important;
+      line-height: 1.3;
+  }
+  
+  .overlay-text {
+      font-size: 0.8rem !important;
+      margin-bottom: 12px !important;
+      display: block !important; 
+  }
+      .btn-download {
+    margin: 0;
+      padding: 5px;
+      font-size: 15px  !important;
+  }
+  
+  .overlay-content {
+      width: 95%;
+      padding: 10px;
+  }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="top-banner text-center py-3">
+            ONE STOP FOR NUTRITION PLAN AND PERSONALIZED DIET CHART !!!
+          </div>
+        
+          <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">
+                    <span class="text-success">EAT HEALTHY</span> <span class="text-primary">+</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="./health.html">Eat Healthy</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./resource.html">Resources</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./mealplan.html">Meal Plan</a></li>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <section class="hero1">
+            <div class="hero-overlay1">
+              <h3 class="fw-bold">Are you making every bite count?</h3>
+              <h5 class="mb-3">Take the EAT HEALTHY + to find out!</h5>
+              <button class="btn btn-custom text-white mt-3"  onclick="location.href='./quiz.html'"><span>START QUIZ</span></button>
+            </div>
+        </section>
+
+        <section class="text-center">
+            <h2 class="mt-5 fw-bold">EAT HEALTHY + provides you currated details about the followings </h2>
+            <h4 class="m-3">People all over the country are finding simple, practical ways to eat healthie. <br> watch their stories to see how they make healthy choices that work for their budget, <br>preferences, and dietry needs (and how you can too).</h4>
+            <img class="mb-3" src="../assets/healthy_section.jpg" alt="Diary_Image" style="width: 30%">
+        </section>
+
+
+        <section class="goals-section py-4">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 image-column">
+                <img src="../assets/mobile app-eat healthy.png" alt="Mobile app screenshot" class="app-image">
+              </div>
+      
+              <div class="col-lg-6 text-column">
+                <h2 class="mb-3">Set Personal Goals for healthy eating</h2>
+                <h4 class="lead mb-3 fw-bold">
+                  Get started with Start Simple with MyPlate!<br />
+                  Meet healthy eating goals one at a time! Use the Start Simple with MyPlate app to pick simple daily food
+                  goals, see real-time progress, and earn badges along the way.
+                </h4>
+                <div class="app-badges">
+                  <img src="../assets/googleplay.jpg" alt="Download on Google Play">
+                  <img src="../assets/appstore.jpg" alt="Download on App Store">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <section class="goals-section1 py-4">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-6 text-column1">
+                <h2 class="mb-3">Find easy, low-cost recipes</h2>
+                <h4 class="lead mb-3 fw-bold">
+                  View delicious recipes in our veru own Weekly Updates!<br />
+                  Ingredients and steps to be followed are given to use what you already  have or browse by category to find something new. Follow the recipe and enjoy, and more!
+                </h4>
+                <div class="app-badges1">
+                  <button class="goals_button" onclick="location.href='./recipe.html'" >VIEW WEEKLY RECIPE</button>
+                </div>
+              </div>
+              <div class="col-lg-6 image-column1">
+                <img src="../assets/easy recipe-eat healthy.png" alt="Mobile app screenshot" class="app-image1">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="container py-3 py-md-5">
+            <div class="challenge-container">
+                <img src="../assets/30 day challenge-home screen.png" 
+                     alt="30-Day Challenge" 
+                     class="challenge-image img-fluid">
+                
+                <div class="overlay-content">
+                    <h1 class="overlay-title fw-bold mb-2 mb-md-3">
+                      JOIN THE 30-DAY<br>CHALLENGE
+                    </h1>
+                    <h3 class="overlay-text mb-3 mb-md-4">
+                      Our 30-Day Challenge is a fun and effective way to kick-start your journey towards better health.<br> 
+                      This program is designed to help you build lasting habits and see noticeable improvements in just one month!
+                    </h3>
+                    <button class="btn text-white btn-download"  onclick="location.href='./pay.html'">
+                      DOWNLOAD THE CHALLENGE PDF
+                    </button>
+                  </div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+
+
+
+    <footer class="pt-5 pb-3">
+        <div class="container">
+          <div class="d-flex flex-wrap justify-content-between footer-container">
+            <div class="footer-column">
+              <h5 class="fw-bold">EAT HEALTHY +</h5>
+              <p>Eat Healthy + is a comprehensive platform, which gives an <br>essential guide to healthy eating</p>
+              <p><strong>Terms & conditions</strong><br><strong>Privacy policy</strong></p>
+            </div>
+            <div class="footer-column">
+              <h6 class="fw-bold">Quick Links:</h6>
+              <p>About us<br>Advertising Policy</p>
+              <h6 class="fw-bold mt-3">Contact us:</h6>
+              <p>Phone: +91 123457890<br>Email: info@eathealthy.com</p>
+            </div>
+            <div class="footer-column">
+              <p><strong>Nutrition Guidelines</strong><br>News<br>Diversity & Inclusion</p>
+            </div>
+          </div>
+      
+          <div class="d-flex justify-content-between align-items-center mt-4 flex-wrap footer-container">
+            <p class="mb-0">© Eat Healthy +. All Right Reserved</p>
+            <div class="d-flex gap-3 footer-social">
+              <i class="bi bi-twitter"></i>
+              <i class="bi bi-facebook"></i>
+              <i class="bi bi-instagram"></i>
+              <i class="bi bi-youtube"></i>
+              <i class="bi bi-linkedin"></i>
+              <i class="bi bi-box"></i>
+            </div>
+          </div>
+        </div>
+      </footer>
+  
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>
+  
