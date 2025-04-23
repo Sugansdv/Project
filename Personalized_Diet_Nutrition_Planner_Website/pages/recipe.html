@@ -15,7 +15,7 @@
     .lentil{
         margin-top: 20px;
         padding: 50px;
-        background-color: white;
+        background-color: #ffffff ;
         width: 1000px;
         margin-left: 250px;
     }
@@ -71,7 +71,7 @@
       }
     }
 
-    /* Media Query for Mobile (425px) */
+
     @media (max-width: 425px) {
       .lentil {
         width: 100%;
@@ -92,6 +92,103 @@
       .navbar-nav {
         font-size: 0.8rem;
       }
+    }
+    .nutrient {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    .nutrients-list {
+        background-color: #ffecd7;
+        list-style-type: none;
+        max-width: 800px;
+        padding: 20px 30px;
+        height: auto;
+        width: 100%;
+    }
+
+    .nutrients-list li {
+        padding: 15px 0;
+        border-bottom: 3px solid black;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nutrients-list strong {
+        display: inline-block;
+        width: 70%;
+    }
+    .num1, .num {
+        width: 30%;
+        text-align: right;
+    }
+    .num1{
+        margin-left: 30px;
+    }
+    .num{
+        margin-left: 18px;
+    }
+    .sub{
+        margin-left: 15px;
+    }
+
+    .nutrients-list li:last-child {
+        border-bottom: none;
+    }
+
+    /* Media Query for 768px */
+    @media (max-width: 768px) {
+        .nutrients-list {
+            padding: 15px 20px;
+        }
+        
+        .nutrients-list li {
+            padding: 12px 0;
+        }
+        
+        .nutrients-list strong {
+            width: 65%;
+        }
+        
+        .num1, .num {
+            width: 35%;
+        }
+    }
+
+    /* Media Query for 425px */
+    @media (max-width: 425px) {
+        body {
+            padding: 10px;
+        }
+        
+        .nutrients-list {
+            padding: 10px 15px;
+        }
+        
+        .nutrients-list li {
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        
+        .nutrients-list strong {
+            width: 60%;
+        }
+        
+        .num1, .num {
+            width: 40%;
+        }
+        
+        .sub {
+            margin-left: 10px;
+        }
+        
+        .num1 {
+            margin-left: 15px;
+        }
+        
+        .num {
+            margin-left: 10px;
+        }
     }
 
   </style>
@@ -164,9 +261,29 @@
           <li>Serve hot, topped with your favorite chili toppings.</li>
         </ol>
       </div>
+      <section class="nutrient">
+        <ul class="nutrients-list">
+          <li><strong>Nutrients</strong> <span class=num1>Amount</span></li>
+          <li><strong>Total Calories</strong> <span class=num1>181</span></li>
+          <li><strong>Total Fat</strong><span class=num1>6 g</span></li>
+          <li><strong class="sub">Saturated Fat</strong><span class=num>1 g</span></li>
+          <li><strong class="sub">Cholesterol</strong> <span class=num>48 mg</span></li>
+          <li><strong>Sodium</strong><span class=num1>197 mg</span> </li>
+          <li><strong>Carbohydrate</strong><span class=num1>9 g</span> </li>
+          <li><strong class="sub">Dietary Fibre</strong><span class=num>2 g</span> </li>
+          <li><strong class="sub">Total sugar</strong><span class=num>5 g</span> </li>
+        
+          <li><strong>Protein</strong> <span class=num1>23 g</span></li>
+          <li><strong>Vitamin</strong> <span class=num1>3 mcg</span></li>
+          <li><strong>Calcium</strong> <span class=num1>32 mg</span></li>
+          <li><strong>Iron</strong> <span class=num1>1 mcg</span></li>
+          <li><strong>Pottasium</strong> <span class=num1>595 mg</span></li>
+          <li><strong>N/A will display when nutrient data is unavailable</strong></li>
+        </ul>
+      </section>
   </main>
 
-  <footer class="pt-5 pb-3 bg-light">
+  <footer class="pt-5 pb-3">
     <div class="container">
       <div class="d-flex flex-wrap justify-content-between footer-container">
         <div class="footer-column">
