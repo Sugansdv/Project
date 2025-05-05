@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .top-bar h5 {
+    color: #ffffff;
+    background-color: #025533;
+  }
+
+  .nav-bar {
+    margin: 0 50px;
+  }
+
+  .nav-link {
+    color: #025533 !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .nav-link:focus,
+  .nav-link:active {
+    color: #025533 !important;
+    text-decoration: none;
+    outline: none;
+  }
+
+  .nav-link:hover {
+    color: #025533 !important;
+    cursor: pointer;
+    border-bottom: 2px solid #025533;
+
+  }
+
+  .right-icons img {
+    margin-left: 20px;
+    cursor: pointer;
+  }
+
+  .left img {
+    width: 100%;
+    min-height: 15vh;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("../assets/toggle.png");
+  }
+
+
+  /* Banner section */
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    overflow: hidden;
+    border: 2px solid #025533;
+    font-weight: bolder;
+  }
+
+  .bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .mother-image,
+  .baby-image {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 2;
+  }
+
+  .mother-image {
+    left: 0;
+  }
+
+  .baby-image {
+    right: 0;
+  }
+
+  
+  .footer {
+    background-color: #004a2f;
+  }
+
+  .footer-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+
+  .social-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    transition: transform 0.2s;
+  }
+
+  .social-img:hover {
+    transform: scale(1.1);
+  }
+  .product-info {
+margin-bottom: 150px;
+}
+
+.product-description {
+font-size: 1rem;
+line-height: 1.7;
+}
+
+.more-link {
+color: #004a2f;
+text-decoration: none;
+}
+
+.more-link:hover {
+text-decoration: underline;
+}
+
+  /* Adjustments for 768px and 425px screens */
+  @media (max-width: 768px) {
+    .nav-bar {
+      margin: 0 20px;
+    }
+
+    .navbar-nav {
+      margin-top: 10px;
+    }
+
+    .nav-link {
+      font-size: 1.2rem;
+      margin-right: 1rem;
+    }
+
+    .right-icons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .right-icons img {
+      margin: 0 8px;
+    }
+
+    .banner {
+      height: 300px;
+    }
+
+    .mother-image,
+    .baby-image {
+      height: 100%;
+    }
+
+
+
+    .footer-link {
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .nav-bar {
+      margin: 0 10px;
+    }
+
+    .navbar-nav {
+      margin-top: 10px;
+    }
+
+    .nav-link {
+      font-size: 1rem;
+      margin-right: 0.8rem;
+    }
+
+    .right-icons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .right-icons img {
+      margin: 0 5px;
+      width: 25px;
+      /* Reduce icon size */
+    }
+
+    .banner {
+      height: 280px;
+    }
+
+    .mother-image,
+    .baby-image {
+      height: 50%;
+      width: 30%;
+    }
+
+.footer {
+      text-align: center;
+    }
+
+    .social-images {
+      justify-content: center !important;
+    }
+
+    .social-img {
+      width: 24px;
+      height: 24px;
+    }
+  }

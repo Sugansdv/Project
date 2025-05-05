@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="./assets/styles.css" rel="stylesheet">
+  <style>
+    /* Base Styles */
+    main{
+      font-size: 16px;
+    }
+    
+    .cart-item {
+      
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      width: 80%;
+      max-height: 350px;
+      margin-left: 350px;
+    }
+    
+    .product-image {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      background-color: #d9fdd3;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #28a745;
+    }
+    
+    .summary-card {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px auto;
+      width: 50%;
+    }
+    
+    /* Mobile Breakpoints */
+    @media (max-width: 768px) {
+      .product-image {
+        width: 60%;
+        margin-bottom: 15px;
+      }
+      
+      .cart-item {
+        padding: 12px;
+      }
+      .summary-card {
+        width: 100%;
+        margin: 0;
+    }
+    .cart-item {
+      margin-left: 0px;
+    }
+    
+    
+    }
+
+    
+    @media (max-width: 425px) {
+      body {
+        font-size: 18px;
+      }
+      
+      .container {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      
+      .product-image {
+        width: 100%;
+        max-height: 180px;
+        
+      }
+      
+      .cart-item {
+        padding: 10px;
+      }
+      
+      .row.align-items-center {
+        flex-direction: column;
+      }
+      
+      .quantity-control {
+        margin: 10px 0;
+      }
+      
+      .summary-card {
+        padding: 15px;
+        margin-top: 50px;
+      }
+      .break{
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Top Bar -->
+    <div class="top-bar text-center">
+      <h5 class="py-3 fw-bold">New Parent Perk: 15% OFF your first HugBug Baby Order! <span class="heart-icon">💗</span>
+      </h5>
+    </div>
+
+    <!-- Navbar -->
+    <div class="nav-bar">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+
+          <!-- Left Logo -->
+          <div class="d-flex align-items-center left">
+            <img src="../assets/image/home_screen/log.png" alt="Logo">
+          </div>
+
+          <!-- Toggler Button (for small & medium screens) -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Collapsible Navbar Content -->
+          <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="./feeding.html">Feeding</a></li>
+              <li class="nav-item"><a class="nav-link" href="./clothing.html">Clothing</a></li>
+              <li class="nav-item"><a class="nav-link" href="./toys.html">Toys</a></li>
+              <li class="nav-item"><a class="nav-link" href="./skincare.html">Bath & Skincare</a></li>
+              <li class="nav-item"><a class="nav-link" href="./bedding.html">Bedding</a></li>
+              <li class="nav-item"><a class="nav-link" href="./gear.html">Gear</a></li>
+            </ul>
+
+            <!-- Right Icons -->
+            <div class="right-icons d-flex align-items-center justify-content-center">
+              <img src="../assets/icons/Group.png" alt="User">
+              <img src="../assets/icons/Group 233.png" alt="Wishlist">
+              <img src="../assets/icons/cart.png" alt="Cart">
+            </div>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container mt-3">
+      <h2 class="text-success mb-3 mb-md-4 text-center text-md-start">Your Shopping Bag</h2>
+      <div id="cart-items-container">
+        <!-- Cart items will be dynamically inserted here -->
+      </div>
+      
+      <div id="cart-summary" class="summary-card">
+        <h4 class="mb-3 mb-md-4 text-center text-md-start">Order Summary</h4>
+        <div>
+          <p class="mb-2">Subtotal <span class="float-end">₹<span id="cart-subtotal">0</span></span></p>
+          <p class="mb-2">Savings <span class="float-end text-danger">₹<span id="cart-savings">0</span></span></p>
+          <p class="mb-2">Coupon & Shipping <span class="float-end text-success">Apply at Checkout</span></p>
+          <hr class="break">
+          <p class="fw-bold">Grand Total <span class="float-end">₹<span id="cart-total">0</span></span></p>
+        </div>
+        <button class="btn btn-success w-100 mt-3 py-2" onclick="window.location.href='./payment.html'">CHECKOUT</button>
+      </div>
+    </div>
+  </main>
+  <footer class="footer text-white py-4">
+    <div class="container me-4">
+      <div class="row text-center text-md-start">
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">COMPANY</h6>
+          <p><a href="#" class="footer-link">About Us</a></p>
+          <p><a href="#" class="footer-link">Why Us?</a></p>
+        </div>
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">SHOP</h6>
+          <p><a href="#" class="footer-link">Toys & Gifts</a></p>
+          <p><a href="#" class="footer-link">Best Sellers</a></p>
+          <p><a href="#" class="footer-link">Baby Essentials</a></p>
+          <p><a href="#" class="footer-link">Skincare & Bath</a></p>
+          <p><a href="#" class="footer-link">Feeding & Nursing</a></p>
+        </div>
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">SUPPORT</h6>
+          <p><a href="#" class="footer-link">Contact Us</a></p>
+          <p><a href="#" class="footer-link">FAQs</a></p>
+          <p><a href="#" class="footer-link">Shipping Info</a></p>
+          <p><a href="#" class="footer-link">Return & Refund Policy</a></p>
+          <p><a href="#" class="footer-link">Track Your Order</a></p>
+        </div>
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">STAY CONNECTED</h6>
+          <div class="d-flex justify-content-center justify-content-md-start gap-3 social-images">
+            <a href="#"><img src="../assets/icons/image.png" alt="Facebook" class="social-img"></a>
+            <a href="#"><img src="../assets/icons/twitter.png" alt="Twitter" class="social-img"></a>
+            <a href="#"><img src="../assets/icons/insta.png" alt="Instagram" class="social-img"></a>
+            <a href="#"><img src="../assets/icons/youtube.png" alt="YouTube" class="social-img"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Toggle -->
+  <script>
+    function toggleFilter(id) {
+      const filterDiv = document.getElementById(id);
+      filterDiv.classList.toggle('d-none');
+    }
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    function renderCart() {
+      const container = document.getElementById('cart-items-container');
+      const summary = document.getElementById('cart-summary');
+      
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="empty-cart text-center py-4">
+            <h4 class="mb-3">Your cart is empty</h4>
+            <p class="mb-3">Continue shopping to add items to your cart</p>
+            <a href="../index.html" class="btn btn-success">Continue Shopping</a>
+          </div>
+        `;
+        summary.style.display = 'none';
+        return;
+      }
+      
+      container.innerHTML = '';
+      let subtotal = 0;
+      
+      cart.forEach((item, index) => {
+        const price = parseFloat(item.price);
+        const itemTotal = price * (item.quantity || 1);
+        subtotal += itemTotal;
+        
+        const itemElement = document.createElement('div');
+        itemElement.className = 'cart-item';
+        itemElement.innerHTML = `
+          <div class="row align-items-center">
+            <div class="col-12 col-md-6 col-lg-3 text-center">
+              <img src="${item.image}" class="product-image img-fluid" alt="${item.title}">
+            </div>
+            <div class="col-12 col-md-3 mt-3 mt-md-0">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <h5 class="fw-bold mb-2">${item.title}</h5>
+                  <p class="mb-2">Size: ${item.size || '--'}</p>
+                  <div class="d-flex align-items-center quantity-control mb-3">
+                    <span class="me-2">QTY:</span>
+                    <button class="btn btn-outline-dark btn-sm me-2" onclick="updateQuantity(${index}, -1)">-</button>
+                    <span id="qty-${index}" class="mx-1">${item.quantity || 1}</span>
+                    <button class="btn btn-outline-dark btn-sm ms-2" onclick="updateQuantity(${index}, 1)">+</button>
+                  </div>
+                  <p class="fw-bold">₹${itemTotal.toFixed(2)}</p>
+                </div>
+                <button class="btn btn-outline-danger btn-sm" onclick="removeItem(${index})">🗑</button>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(itemElement);
+      });
+      
+      // Update summary
+      document.getElementById('cart-subtotal').textContent = subtotal.toFixed(2);
+      document.getElementById('cart-savings').textContent = '0.00';
+      document.getElementById('cart-total').textContent = subtotal.toFixed(2);
+    }
+    
+    function updateQuantity(index, change) {
+      cart[index].quantity = Math.max(1, (cart[index].quantity || 1) + change);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+      updateCartCountOnAllPages();
+    }
+    
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+      updateCartCountOnAllPages();
+    }
+    
+    function clearCart() {
+      localStorage.removeItem('cart');
+      cart = [];
+      renderCart();
+      updateCartCountOnAllPages();
+    }
+    
+    function updateCartCountOnAllPages() {
+      // Implementation for multi-tab sync would go here
+    }
+    
+    // Initialize the cart on page load
+    document.addEventListener('DOMContentLoaded', renderCart);
+  </script>
+</body>
+</html>

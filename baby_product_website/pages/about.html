@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .top-bar h5 {
+      color: #ffffff;
+      background-color: #025533;
+    }
+
+    .nav-bar {
+      margin: 0 50px;
+    }
+
+    .nav-link {
+      color: #025533 !important;
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-right: 1.5rem;
+    }
+
+    .nav-link:focus,
+    .nav-link:active {
+      color: #025533 !important;
+      text-decoration: none;
+      outline: none;
+    }
+
+    .nav-link:hover {
+      color: #025533 !important;
+      cursor: pointer;
+      border-bottom: 2px solid #025533;
+
+    }
+
+    .right-icons img {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    .left img {
+      width: 100%;
+      min-height: 15vh;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("../assets/toggle.png");
+    }
+
+
+    /* Banner section */
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      text-align: center;
+      overflow: hidden;
+      border: 2px solid #025533;
+      font-weight: bolder;
+    }
+
+    .bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .mother-image,
+    .baby-image {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .mother-image {
+      left: 0;
+    }
+
+    .baby-image {
+      right: 0;
+    }
+
+    
+    .footer {
+      background-color: #004a2f;
+    }
+
+    .footer-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+
+    .social-img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      transition: transform 0.2s;
+    }
+
+    .social-img:hover {
+      transform: scale(1.1);
+    }
+    .product-info {
+  margin-bottom: 150px;
+}
+
+.product-description {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.more-link {
+  color: #004a2f;
+  text-decoration: none;
+}
+
+.more-link:hover {
+  text-decoration: underline;
+}
+
+    /* Adjustments for 768px and 425px screens */
+    @media (max-width: 768px) {
+      .nav-bar {
+        margin: 0 20px;
+      }
+
+      .navbar-nav {
+        margin-top: 10px;
+      }
+
+      .nav-link {
+        font-size: 1.2rem;
+        margin-right: 1rem;
+      }
+
+      .right-icons {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .right-icons img {
+        margin: 0 8px;
+      }
+
+      .banner {
+        height: 300px;
+      }
+
+      .mother-image,
+      .baby-image {
+        height: 100%;
+      }
+
+
+
+      .footer-link {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 425px) {
+      .nav-bar {
+        margin: 0 10px;
+      }
+
+      .navbar-nav {
+        margin-top: 10px;
+      }
+
+      .nav-link {
+        font-size: 1rem;
+        margin-right: 0.8rem;
+      }
+
+      .right-icons {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .right-icons img {
+        margin: 0 5px;
+        width: 25px;
+        /* Reduce icon size */
+      }
+
+      .banner {
+        height: 280px;
+      }
+
+      .mother-image,
+      .baby-image {
+        height: 50%;
+        width: 30%;
+      }
+
+.footer {
+        text-align: center;
+      }
+
+      .social-images {
+        justify-content: center !important;
+      }
+
+      .social-img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- Top Bar -->
+    <div class="top-bar text-center">
+      <h5 class="py-3 fw-bold">New Parent Perk: 15% OFF your first HugBug Baby Order! <span class="heart-icon">💗</span>
+      </h5>
+    </div>
+
+    <!-- Navbar -->
+    <div class="nav-bar">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+
+          <!-- Left Logo -->
+          <div class="d-flex align-items-center left">
+            <img src="../assets/image/home_screen/log.png" alt="Logo">
+          </div>
+
+          <!-- Toggler Button (for small & medium screens) -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Collapsible Navbar Content -->
+          <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="./feeding.html">Feeding</a></li>
+              <li class="nav-item"><a class="nav-link" href="./clothing.html">Clothing</a></li>
+              <li class="nav-item"><a class="nav-link" href="./toys.html">Toys</a></li>
+              <li class="nav-item"><a class="nav-link" href="./skincare.html">Bath & Skincare</a></li>
+              <li class="nav-item"><a class="nav-link" href="./bedding.html">Bedding</a></li>
+              <li class="nav-item"><a class="nav-link" href="./gear.html">Gear</a></li>
+            </ul>
+
+            <!-- Right Icons -->
+            <div class="right-icons d-flex align-items-center justify-content-center">
+              <img src="../assets/icons/Group.png" alt="User">
+              <img src="../assets/icons/Group 233.png" alt="Wishlist">
+              <img src="../assets/icons/cart.png" alt="Cart">
+            </div>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="banner-container">
+      <div class="banner">
+        <img src="./assets/feeding_images/image15.png" alt="Background" class="bg-image">
+        <img src="./assets/feeding_images/image13.png" alt="Mother feeding baby" class="mother-image">
+        <img src="./assets/feeding_images/image14.png" alt="Baby drinking" class="baby-image">
+        </div>
+        </section>
+        <div class="container">
+            <h1 class="my-4 text-center">💗 Welcome To Hug Bug Baby</h1>
+            <h2 class="mb-4 text-center">Where Every Cuddle Counts And Every Product Is Made With Love.</h2>
+        
+            <div>
+              <p class="section-title"><span class="emoji">🌼</span>Our Story</p>
+              <p>
+                At Hug Bug Baby, we believe the tiniest moments make the biggest memories. That’s why we create baby products that are gentle, safe, and full of care — just like a hug from mom or dad. From soft onesies to soothing toys, every item is thoughtfully designed to comfort, protect, and delight your little one.
+              </p>
+            </div>
+        
+            <div>
+              <p class="section-title"><span class="emoji">🌿</span>Why Parents Love Us</p>
+              <ul>
+                <li>✅ <span class="highlight">Soft, Organic Fabrics</span></li>
+                <li>🛡️ <span class="highlight">Safe & Certified Materials</span></li>
+                <li>🍭 <span class="highlight">Adorable, Thoughtful Designs</span></li>
+                <li>💕 <span class="highlight">Made With Love For Every Milestone</span></li>
+              </ul>
+            </div>
+        
+            <div>
+              <p class="section-title"><span class="emoji">✨</span>Our Mission</p>
+              <p>
+                To wrap babies in warmth, comfort, and care — and help parents feel confident every step of the way.
+              </p>
+            </div>
+        
+            <div class="mb-5">
+              <p class="section-title"><span class="emoji">👩‍👩‍👧</span>From Our Family To Yours</p>
+              <p>
+                We’re here to grow with you — through giggles, nap times, and first steps. Thank you for making Hug Bug Baby part of your journey.
+              </p>
+            </div>
+          </div>
+    </main>
+
+    <footer class="footer text-white py-4">
+      <div class="container me-4">
+        <div class="row text-center text-md-start">
+          <div class="col-12 col-md-3 mb-3">
+            <h6 class="fw-bold">COMPANY</h6>
+            <p><a href="#" class="footer-link">About Us</a></p>
+            <p><a href="#" class="footer-link">Why Us?</a></p>
+          </div>
+          <div class="col-12 col-md-3 mb-3">
+            <h6 class="fw-bold">SHOP</h6>
+            <p><a href="#" class="footer-link">Toys & Gifts</a></p>
+            <p><a href="#" class="footer-link">Best Sellers</a></p>
+            <p><a href="#" class="footer-link">Baby Essentials</a></p>
+            <p><a href="#" class="footer-link">Skincare & Bath</a></p>
+            <p><a href="#" class="footer-link">Feeding & Nursing</a></p>
+          </div>
+          <div class="col-12 col-md-3 mb-3">
+            <h6 class="fw-bold">SUPPORT</h6>
+            <p><a href="#" class="footer-link">Contact Us</a></p>
+            <p><a href="#" class="footer-link">FAQs</a></p>
+            <p><a href="#" class="footer-link">Shipping Info</a></p>
+            <p><a href="#" class="footer-link">Return & Refund Policy</a></p>
+            <p><a href="#" class="footer-link">Track Your Order</a></p>
+          </div>
+          <div class="col-12 col-md-3 mb-3">
+            <h6 class="fw-bold">STAY CONNECTED</h6>
+            <div class="d-flex justify-content-center justify-content-md-start gap-3 social-images">
+              <a href="#"><img src="../assets/icons/image.png" alt="Facebook" class="social-img"></a>
+              <a href="#"><img src="../assets/icons/twitter.png" alt="Twitter" class="social-img"></a>
+              <a href="#"><img src="../assets/icons/insta.png" alt="Instagram" class="social-img"></a>
+              <a href="#"><img src="../assets/icons/youtube.png" alt="YouTube" class="social-img"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+    <!-- JavaScript for Toggle -->
+    <script>
+      function toggleFilter(id) {
+        const filterDiv = document.getElementById(id);
+        filterDiv.classList.toggle('d-none');
+      }
+    </script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+    <script src="../script/script.js"></script>
+  
+  </body>
+  
+  </html>

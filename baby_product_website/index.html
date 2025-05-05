@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="./assets/style.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    .top-bar h5 {
+      color: #ffffff;
+      background-color: #025533;
+    }
+    .nav-bar {
+      margin: 0 50px;
+    }
+    .nav-link {
+      color: #025533 !important;
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-right: 1.5rem;
+    }
+    .nav-link:focus,
+.nav-link:active {
+  color: #025533 !important;
+  text-decoration: none;
+  outline: none;
+}
+    .nav-link:hover {
+      color: #025533 !important;
+        cursor: pointer;
+        border-bottom: 2px solid  #025533;
+    
+    }
+    .right-icons img {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+    .left img {
+      width: 100%;
+      min-height: 15vh;
+    }
+    .navbar-toggler-icon {
+      background-image: url("./assets/toggle.png");
+    }
+    .footer {
+      background-color: #004a2f;
+    }
+
+    .footer-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+
+    .social-img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      transition: transform 0.2s;
+    }
+
+    .social-img:hover {
+      transform: scale(1.1);
+    }
+    .more-link {
+  color: #004a2f;
+  text-decoration: none;
+}
+
+.more-link:hover {
+  color: #004a2f !important;
+  text-decoration: underline;
+}
+
+    
+
+    @media (max-width: 768px) {
+      .nav-bar {
+        margin: 0 20px;
+      }
+      .navbar-nav {
+        margin-top: 10px;
+      }
+      .nav-link {
+        font-size: 1.2rem;
+        margin-right: 1rem;
+      }
+      
+      .right-icons {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+      .right-icons img {
+        margin: 0 8px;
+      }
+      .footer-link {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 425px) {
+      .nav-bar {
+        margin: 0 10px;
+      }
+      .navbar-nav {
+        margin-top: 10px;
+      }
+      .nav-link {
+        font-size: 1rem;
+        margin-right: 0.8rem;
+      }
+      .right-icons {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+      .right-icons img {
+        margin: 0 5px;
+        width: 25px; /* Reduce icon size */
+      }
+      .footer {
+        text-align: center;
+      }
+
+      .social-images {
+        justify-content: center !important;
+      }
+
+      .social-img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .modal-content {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      border: none;
+    }
+
+    .modal-body {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .modal-img {
+      width: 100%;
+      max-width: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .modal-body {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .modal-img {
+        margin-bottom: 1rem;
+        max-width: 100%;
+      }
+    }
+
+
+
+
+
+    .modal-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9998;
+      display: none;
+    }
+    .modal-content {
+      border-radius: 15px;
+      width: 80%;
+      max-width: 800px;
+      position: relative;
+      margin: 100px auto;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .offer-container {
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .offer-heading {
+      color: #00552E; /* dark green */
+      font-weight: 700;
+    }
+    .offer-subtext {
+      color: #000000;
+      font-weight: 600;
+    }
+    .input-field {
+      border-radius: 12px;
+      padding: 12px 20px;
+      font-size: 1rem;
+    }
+    .coupon-button {
+      background-color: #00552E;
+      color: white;
+      padding: 12px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      width: 100%;
+    }
+    .offer-container {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    
+    .text-green {
+      color: #146C43;
+    }
+
+    #cart-count {
+  font-size: 0.75rem;
+  padding: 0.35em 0.5em;
+}
+
+    
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Top Bar -->
+    <div class="top-bar text-center">
+      <h5 class="py-3 fw-bold">New Parent Perk: 15% OFF your first HugBug Baby Order! <span class="heart-icon">💗</span></h5>
+    </div>
+
+    <!-- Navbar -->
+    <div class="nav-bar">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+
+          <!-- Left Logo -->
+          <div class="d-flex align-items-center left">
+            <img src="./assets/image/home_screen/log.png" alt="Logo">
+          </div>
+
+          <!-- Toggler Button (for small & medium screens) -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                  aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Collapsible Navbar Content -->
+          <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <!-- <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li> -->
+              <li class="nav-item"><a class="nav-link" href="./pages/feeding.html">Feeding</a></li>
+              <li class="nav-item"><a class="nav-link" href="./pages/clothing.html">Clothing</a></li>
+              <li class="nav-item"><a class="nav-link" href="./pages/toys.html">Toys</a></li>
+              <li class="nav-item"><a class="nav-link" href="./pages/skincare.html">Bath & Skincare</a></li>
+              <li class="nav-item"><a class="nav-link" href="./pages/bedding.html">Bedding</a></li>
+              <li class="nav-item"><a class="nav-link" href="./pages/gear.html">Gear</a></li>
+            </ul>
+
+            <!-- Right Icons -->
+            <div class="right-icons d-flex align-items-center justify-content-center">
+              <img src="./assets/icons/Group.png" alt="User"  onclick="window.location.href='./index.html'" style="cursor:pointer;">
+              <img src="./assets/icons/Group 233.png" alt="Wishlist">
+              <div class="cart-icon position-relative" onclick="window.location.href='./pages/cart.html'" style="cursor:pointer;">
+                <img src="./assets/icons/cart.png" alt="Cart">
+                <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  0
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero-section d-flex align-items-center">
+      <div class="hero-content text-start">
+        <h1 class="display-5 mb-3 fw-bold hero-text">The Softest for your baby</h1>
+        <a href="#" class="btn btn-shop-now fw-bold ms-5">SHOP NOW</a>
+      </div>
+    </section>
+
+    <section class="category">
+      <div class="container">
+        <h2 class="section-title">Shop By Category</h2>
+        <div class="row text-center justify-content-center">
+          <!-- Feeding -->
+          <div class="col-4 col-sm-3 col-md-2 category-item">
+            <div class="category-img" style="background-color:#FCD2A5;">
+              <img src="./assets/image/home_screen/image8.png" alt="Feeding" />
+            </div>
+            <strong>Feeding</strong>
+          </div>
+      
+          <!-- Clothing -->
+          <div class="col-4 col-sm-3 col-md-2 category-item">
+            <div class="category-img" style="background-color:#FCAFAF;">
+              <img src="./assets/image/home_screen/image9.png" alt="Clothing" />
+            </div>
+            <strong>Clothing</strong>
+          </div>
+      
+          <!-- Toys -->
+          <div class="col-4 col-sm-3 col-md-2 category-item">
+            <div class="category-img" style="background-color:#C7D6DD;">
+              <img src="./assets/image/home_screen/image10.png" alt="Toys" />
+            </div>
+            <strong>Toys</strong>
+          </div>
+      
+          <!-- Bath & Skin Care -->
+          <div class="col-4 col-sm-3 col-md-2 category-item ct">
+            <div class="category-img" style="background-color:#D2E3CE;">
+              <img src="./assets/image/home_screen/image11.png" alt="Bath & Skin Care" />
+            </div>
+            <strong>Bath & Skin Care</strong>
+          </div>
+      
+          <!-- Gear -->
+          <div class="col-4 col-sm-3 col-md-2 category-item ct">
+            <div class="category-img" style="background-color:#FCD2A5;">
+              <img src="./assets/image/home_screen/image12.png" alt="Gear" />
+            </div>
+            <strong>Gear</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="best-seller text-center">
+      <div class="container my-4">
+        <h2 class="section-title ">Best Sellers</h2>
+        <div class="row g-3 justify-content-center">
+          
+          <!-- Product 1 -->
+          <div class="custom-width">
+            <div class="custom-card">
+              <img src="../assets/image/home_screen/image6.png" class="img-fluid product-img" alt="Product 1">
+              <h5 class="card-title">Organic Cotton Onesie</h5>
+              <p class="price">₹ 500</p>
+              <button class="btn btn-cart">Add to cart</button>
+            </div>
+          </div>
+    
+          <!-- Product 2 -->
+          <div class="custom-width">
+            <div class="custom-card">
+              <img src="../assets/image/home_screen/image7.png" class="img-fluid product-img" alt="Product 2">
+              <h5 class="card-title">Stacking Rings Toy</h5>
+              <p class="price">₹ 179</p>
+              <button class="btn btn-cart">Add to cart</button>
+            </div>
+          </div>
+    
+          <!-- Product 3 -->
+          <div class="custom-width">
+            <div class="custom-card">
+              <img src="../assets/image/home_screen/image19.png" class="img-fluid product-img" alt="Product 3">
+              <h5 class="card-title">Soft Teddy Bear</h5>
+              <p class="price">₹ 350</p>
+              <button class="btn btn-cart">Add to cart</button>
+            </div>
+          </div>
+    
+          <!-- Product 4 -->
+          <div class="custom-width">
+            <div class="custom-card">
+              <img src="../assets/image/home_screen/image20.png" class="img-fluid product-img" alt="Product 4">
+              <h5 class="card-title">Baby Booties</h5>
+              <p class="price">₹ 200</p>
+              <button class="btn btn-cart">Add to cart</button>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    
+    </section>
+
+    <section class="testimonials">
+      
+  <div class="container my-5">
+    <h2 class="section-title">See What Parents Are Saying...</h2>
+    <div class="row justify-content-center g-4">
+
+      <!-- Testimonial 1 -->
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Absolutely love HugBug Baby! The quality of the products is amazing and so gentle on my little one’s skin. The customer service is just as comforting as their cuddly blankets!"</p>
+          <div class="star-rating">★ ★ ★ ★ ☆</div>
+          <img src="./assets/image/home_screen/image3.png" alt="Ananya M." class="testimonial-img">
+          <p class="testimonial-name">— Ananya M., Chennai</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"The moment I switched to HugBug Baby products, I noticed the difference. Soft, safe, and thoughtfully designed—everything a parent could wish for."</p>
+          <div class="star-rating star1">★ ★ ★ ★ ☆</div>
+          <img src="./assets/image/home_screen/image4.png" alt="Rahul K." class="testimonial-img">
+          <p class="testimonial-name">— Rahul K., Bengaluru</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"HugBug Baby truly understands what babies need. From their adorable designs to the safe materials, everything feels made with love!"</p>
+          <div class="star-rating star2">★ ★ ★ ★ ☆</div>
+          <img src="./assets/image/home_screen/image5.png" alt="Sofia D." class="testimonial-img">
+          <p class="testimonial-name">— Sofia D., Mumbai</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+    </section>
+    <section class="banner-section">
+      <div class="banner-content">
+        <h1 class="banner-title">SEASONAL SALE</h1>
+        <h2 class="banner-subtitle">SUMMER/SPRING BABY SALE, DIAPER DAYS, WINTER WARMERS</h2>
+      </div>
+      <img src="./assets/image/home_screen/Group 265.png" class="banner-offer-img" alt="OFFER">
+    </section>
+
+    <section class="brand">
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <!-- Text Content -->
+          <div class="col-md-6 mb-4 mb-md-0">
+            <h2 class="brand-title text-center">HugBug Baby</h2>
+            <p class="brand-text">At HugBug Baby, we believe every baby deserves a gentle, joyful, and safe start to life. Born out of love and inspired by the tiny giggles and soft snuggles of little ones, HugBug Baby is your trusted companion in the beautiful journey of parenthood.</p>
+            <p class="brand-text">We offer a curated range of high-quality baby products — from cozy clothing and soft blankets to thoughtful essentials — all crafted with the utmost care using baby-safe, skin-friendly materials. Our products are not just adorable; they’re designed to be functional, safe, and made for real-life parenting moments. <a href="#" class="read-more">Read More</a></p>
+          </div>
+    
+          <!-- Image -->
+          <div class="col-md-6 text-center">
+            <img src="./assets/hands.jpg" alt="HugBug Baby Image" class="img-fluid" style="width: 80%">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="subscribe-container">
+      <div class="position-relative mx-3 mx-md-5 my-4">
+        <img src="./assets/home screen2.png" alt="Subscribe Background" class="subscribe-image">
+      
+        <div class="subscribe-box">
+          <h2 class="mb-3">Subscribe to our newsletter</h2>
+          <p class="mb-4">Promotions, new products and sales. Directly to your inbox.</p>
+          <form class="row g-2 justify-content-center" id="subscribeForm">
+            <div class="col-12 col-sm-8">
+              <input type="email" id="emailInput" class="form-control" placeholder="Your E-mail" required>
+            </div>
+            <div class="col-12 col-sm-4">
+              <button type="submit" class="btn btn-subscribe w-100 fw-bold">SUBSCRIBE</button>
+            </div>
+          </form>
+        </div>
+      </div>
+        </section>
+
+          <!-- MODAL -->
+<div class="modal fade" id="subscribeModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-body">
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+          <img src="./assets/susbcription image.png" alt="Thanks" class="modal-img">
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+          <div>
+            <h2 class="mb-3">Want To Be The First To Get The Best Deals For Your STAR 🌟 ?</h2>
+            <h4>Subscribe To Our Newsletter Today!</h4>
+            <p class="mt-5">You Have Been Subscribed To Our Newsletter</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </main>
+  <footer class="footer text-white py-4">
+    <div class="container me-4">
+      <div class="row text-center text-md-start">
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">COMPANY</h6>
+          <p><a href="./pages/about.html" class="footer-link">About Us</a></p>
+          <p><a href="./pages/why_us.html" class="footer-link">Why Us?</a></p>
+        </div>
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">SHOP</h6>
+          <p><a href="./pages/toys.html" class="footer-link">Toys & Gifts</a></p>
+          <p><a href="./pages/clothing.html" class="footer-link">Best Sellers</a></p>
+          <p><a href="./pages/toys.html" class="footer-link">Baby Essentials</a></p>
+          <p><a href="./pages/skincare.html" class="footer-link">Skincare & Bath</a></p>
+          <p><a href="./pages/feeding.html" class="footer-link">Feeding & Nursing</a></p>
+        </div>
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">SUPPORT</h6>
+          <p><a href="#" class="footer-link">Contact Us</a></p>
+          <p><a href="./pages/faq.html" class="footer-link">FAQs</a></p>
+          <p><a href="#" class="footer-link">Shipping Info</a></p>
+          <p><a href="./pages/return.html" class="footer-link">Return & Refund Policy</a></p>
+          <p><a href="./pages/trackorder.html" class="footer-link">Track Your Order</a></p>
+        </div>
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">STAY CONNECTED</h6>
+          <div class="d-flex justify-content-center justify-content-md-start gap-3 social-images">
+            <a href="#"><img src="./assets/icons/image.png" alt="Facebook" class="social-img"></a>
+            <a href="#"><img src="./assets/icons/twitter.png" alt="Twitter" class="social-img"></a>
+            <a href="#"><img src="./assets/icons/insta.png" alt="Instagram" class="social-img"></a>
+            <a href="#"><img src="./assets/icons/youtube.png" alt="YouTube" class="social-img"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="phoneModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('phoneModal')">&times;</button>
+      <div class="container">
+          <div class="row offer-container">
+            <!-- Left Side: Baby Image -->
+            <div class="col-md-6 p-0">
+              <img src="./assets/susbcription image.png" alt="Baby" class="img-fluid h-100 w-100" style="object-fit: cover;">
+            </div>
+        
+            <!-- Right Side: Offer Content -->
+            <div class="col-md-6 d-flex flex-column justify-content-center align-items-center p-5 text-center">
+              <h2 class="offer-heading mb-3">Exclusive offer only for first time buyers!</h2>
+              <p class="offer-subtext mb-4">Get INR 200 off on total order value on & above INR 1000</p>
+              <input type="text" placeholder="Your Phone Number" class="form-control input-field mb-3" />
+              <button class="coupon-button" onclick="applyCoupon()">GET COUPON CODE</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="modal-overlay" id="couponModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('couponModal')">&times;</button>
+      <div class="container">
+          <div class="row offer-container p-4">
+            <!-- Left image -->
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+              <img src="./assets/susbcription image.png" alt="Baby" class="img-fluid rounded">
+            </div>
+        
+            <!-- Right content -->
+            <div class="col-md-6 text-center d-flex flex-column justify-content-center align-items-center">
+              <h3 class="fw-bold text-green">Exclusive offer only for first time buyers!</h3>
+              <p class="fs-5 mt-3">Get INR 200 off on total order value on & above INR 1000</p>
+              <h4 class="fw-bold text-green mt-3"><em>Coupon code copied!!!</em></h4>
+              <!-- <img src="coupon-icon.png" alt="Coupon" class="coupon-img"> -->
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="container my-5">
+    <button class="btn " onclick="showModal('phoneModal')"></button>
+  </div>
+
+
+
+
+
+
+  
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script>
+    // Function to update cart count display
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartCountElement = document.getElementById('cart-count');
+      cartCountElement.textContent = cart.length;
+    }
+  
+    // Initialize cart count on page load
+    document.addEventListener('DOMContentLoaded', updateCartCount);
+  
+    const addToCartButtons = document.querySelectorAll('.btn-cart');
+    
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const card = button.closest('.custom-card');
+        const title = card.querySelector('.card-title').innerText;
+        const price = card.querySelector('.price').innerText.replace('₹', '').trim();
+        const image = card.querySelector('.product-img').getAttribute('src');
+    
+        const fullImagePath = 'assets/image/home_screen/' + image.split('/').pop(); // e.g., image6.png
+        const relativeImagePathForCart = '../' + fullImagePath;
+    
+        const product = {
+          title,
+          price,
+          image: relativeImagePathForCart,
+          quantity: 1
+        };
+    
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+        // Update the cart count display
+        updateCartCount();
+        
+        // alert(`${title} added to cart!`);
+      });
+    });
+
+    
+  </script>
+  
+
+  <script src="./script/modal.js"></script>
+  <script src="./script/form.js"></script>
+  <!-- <script src="./script/cart.js"></script> -->
+  
+</body>
+</html>

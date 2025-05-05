@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .top-bar h5 {
+      color: #ffffff;
+      background-color: #025533;
+    }
+
+    .nav-bar {
+      margin: 0 50px;
+    }
+
+    .nav-link {
+      color: #025533 !important;
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-right: 1.5rem;
+    }
+
+    .nav-link:focus,
+    .nav-link:active {
+      color: #025533 !important;
+      text-decoration: none;
+      outline: none;
+    }
+
+    .nav-link:hover {
+      color: #025533 !important;
+      cursor: pointer;
+      border-bottom: 2px solid #025533;
+
+    }
+
+    .right-icons img {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    .left img {
+      width: 100%;
+      min-height: 15vh;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("../assets/toggle.png");
+    }
+
+
+    /* Banner section */
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      text-align: center;
+      overflow: hidden;
+      border: 2px solid #025533;
+      font-weight: bolder;
+    }
+
+    .bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .mother-image,
+    .baby-image {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .mother-image {
+      left: 0;
+    }
+
+    .baby-image {
+      right: 0;
+    }
+
+    .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #025533;
+      ;
+      font-family: sans-serif;
+      z-index: 3;
+      padding: 10px;
+      border-radius: 10px;
+      width: 80%;
+    }
+
+    .center-text h1 {
+      font-size: 4rem;
+      /* Increased */
+      margin: 0.5rem 0;
+    }
+
+    .center-text p,
+    .center-text h2 {
+      margin: 0.3rem 0;
+      font-size: 1.5rem;
+      /* Increased */
+    }
+
+    .filter-toggle {
+      background-color: #b2ccc3;
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 10px 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .filter-options {
+      padding: 10px;
+    }
+
+    .filter-options .form-check {
+      margin-left: 10px;
+    }
+
+    .product-card {
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 20px;
+      height: 100%;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .product-name {
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .product-price {
+      font-weight: bold;
+    }
+
+    .footer {
+      background-color: #004a2f;
+    }
+
+    .footer-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+
+    .social-img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      transition: transform 0.2s;
+    }
+
+    .social-img:hover {
+      transform: scale(1.1);
+    }
+    .product-info {
+  margin-bottom: 150px;
+}
+
+.product-description {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.more-link {
+  color: #004a2f;
+  text-decoration: none;
+}
+
+.more-link:hover {
+  text-decoration: underline;
+}
+
+    /* Adjustments for 768px and 425px screens */
+    @media (max-width: 768px) {
+      .nav-bar {
+        margin: 0 20px;
+      }
+
+      .navbar-nav {
+        margin-top: 10px;
+      }
+
+      .nav-link {
+        font-size: 1.2rem;
+        margin-right: 1rem;
+      }
+
+      .right-icons {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .right-icons img {
+        margin: 0 8px;
+      }
+
+      .banner {
+        height: 300px;
+      }
+
+      .mother-image,
+      .baby-image {
+        height: 100%;
+      }
+
+      .center-text {
+        width: 90%;
+        font-size: 1rem;
+      }
+
+      .center-text h1 {
+        font-size: 3rem;
+        /* Increased */
+      }
+
+      .center-text p,
+      .center-text h2 {
+        font-size: 1.2rem;
+        /* Increased */
+      }
+
+      .filters-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .products-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      .footer-link {
+        font-size: 0.85rem;
+      }
+      .product-description {
+    font-size: 0.95rem;
+  }
+  .product-info {
+  margin-bottom: 100px;
+}
+    }
+
+    @media (max-width: 425px) {
+      .nav-bar {
+        margin: 0 10px;
+      }
+
+      .navbar-nav {
+        margin-top: 10px;
+      }
+
+      .nav-link {
+        font-size: 1rem;
+        margin-right: 0.8rem;
+      }
+
+      .right-icons {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .right-icons img {
+        margin: 0 5px;
+        width: 25px;
+        /* Reduce icon size */
+      }
+
+      .banner {
+        height: 280px;
+      }
+
+      .mother-image,
+      .baby-image {
+        height: 50%;
+        width: 30%;
+      }
+
+      .center-text {
+        background-color: transparent;
+        font-size: 0.9rem;
+        padding: 5px;
+      }
+
+      .center-text h1 {
+        font-size: 2rem;
+        /* Increased */
+      }
+
+      .center-text p,
+      .center-text h2 {
+        font-size: 1rem;
+        /* Increased */
+      }
+
+      .product-card {
+        padding: 10px;
+      }
+
+      .product-name {
+        font-size: 14px;
+      }
+
+      .product-price {
+        font-size: 14px;
+      }
+
+      
+      .product-description {
+    font-size: 0.9rem;
+  }
+  .product-info {
+  margin-bottom: 50px;
+}
+.footer {
+        text-align: center;
+      }
+
+      .social-images {
+        justify-content: center !important;
+      }
+
+      .social-img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- Top Bar -->
+    <div class="top-bar text-center">
+      <h5 class="py-3 fw-bold">New Parent Perk: 15% OFF your first HugBug Baby Order! <span class="heart-icon">💗</span>
+      </h5>
+    </div>
+
+    <!-- Navbar -->
+    <div class="nav-bar">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+
+          <!-- Left Logo -->
+          <div class="d-flex align-items-center left">
+            <img src="../assets/image/home_screen/log.png" alt="Logo">
+          </div>
+
+          <!-- Toggler Button (for small & medium screens) -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Collapsible Navbar Content -->
+          <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="./feeding.html">Feeding</a></li>
+              <li class="nav-item"><a class="nav-link" href="./clothing.html">Clothing</a></li>
+              <li class="nav-item"><a class="nav-link" href="./toys.html">Toys</a></li>
+              <li class="nav-item"><a class="nav-link" href="./skincare.html">Bath & Skincare</a></li>
+              <li class="nav-item"><a class="nav-link" href="./bedding.html">Bedding</a></li>
+              <li class="nav-item"><a class="nav-link" href="./gear.html">Gear</a></li>
+            </ul>
+
+            <!-- Right Icons -->
+            <div class="right-icons d-flex align-items-center justify-content-center">
+              <img src="../assets/icons/Group.png" alt="User"  onclick="window.location.href='../index.html'" style="cursor:pointer;">
+              <img src="../assets/icons/Group 233.png" alt="Wishlist">
+              <img src="../assets/icons/cart.png" alt="Cart"  onclick="window.location.href='./cart.html'" style="cursor:pointer;">
+            </div>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="banner-container">
+      <div class="banner">
+        <img src="./assets/feeding_images/image15.png" alt="Background" class="bg-image">
+        <img src="./assets/feeding_images/image13.png" alt="Mother feeding baby" class="mother-image">
+        <img src="./assets/feeding_images/image14.png" alt="Baby drinking" class="baby-image">
+
+        <div class="center-text">
+          <h2 class="fw-bold">HugBug Baby</h2>
+          <p>Feeding Bottle</p>
+          <p>“Nourish with love”</p>
+          <p>End of season</p>
+          <h1>SALE</h1>
+          <p>UPTO 50% OFF</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-container">
+      <div class="container-fluid">
+        <div class="row mt-5">
+
+          <!-- Left Filter Section -->
+          <div class="col-md-3 filters-col">
+            <div class="filter-section">
+
+              <!-- PRICE Filter -->
+              <div class="mb-3">
+                <button class="filter-toggle" type="button" onclick="toggleFilter('priceFilter')">
+                  PRICE <span class="float-end">+</span>
+                </button>
+                <div id="priceFilter" class="filter-options d-none">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="price1" />
+                    <label class="form-check-label" for="price1">₹ 0–500</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="price2" />
+                    <label class="form-check-label" for="price2">₹ 501–1000</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="price3" />
+                    <label class="form-check-label" for="price3">₹ 1001–2000</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="price4" />
+                    <label class="form-check-label" for="price4">₹ 2000 AND ABOVE</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DISCOUNT Filter -->
+              <div class="mb-3">
+                <button class="filter-toggle" type="button" onclick="toggleFilter('discountFilter')">DISCOUNT <span
+                    class="float-end">+</span></button>
+                <div id="discountFilter" class="filter-options d-none">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="discount10" />
+                    <label class="form-check-label" for="discount10">10% and above</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="discount20" />
+                    <label class="form-check-label" for="discount20">20% and above</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="discount30" />
+                    <label class="form-check-label" for="discount30">30% and above</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="discount40" />
+                    <label class="form-check-label" for="discount40">40% and above</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- COLOUR Filter -->
+              <div class="mb-3">
+                <button class="filter-toggle" type="button" onclick="toggleFilter('colorFilter')">COLOUR <span
+                    class="float-end">+</span></button>
+                <div id="colorFilter" class="filter-options d-none">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="colorBlack" />
+                    <label class="form-check-label" for="colorBlack">Black</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="colorBlue" />
+                    <label class="form-check-label" for="colorBlue">Blue</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="colorPink" />
+                    <label class="form-check-label" for="colorPink">Pink</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="colorGrey" />
+                    <label class="form-check-label" for="colorGrey">Grey</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PRODUCT TYPE Filter -->
+              <div class="mb-3">
+                <button class="filter-toggle" type="button" onclick="toggleFilter('productTypeFilter')">PRODUCT TYPE
+                  <span class="float-end">+</span></button>
+                <div id="productTypeFilter" class="filter-options d-none">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="productTypeFeedingBottle" />
+                    <label class="form-check-label" for="productTypeFeedingBottle">Feeding Bottle</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="productTypeClothing" />
+                    <label class="form-check-label" for="productTypeClothing">Clothing</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="productTypeToys" />
+                    <label class="form-check-label" for="productTypeToys">Toys</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="productTypeBathSkinCare" />
+                    <label class="form-check-label" for="productTypeBathSkinCare">Bath and Skin Care</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="productTypeGear" />
+                    <label class="form-check-label" for="productTypeGear">Gear</label>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- AGE Filter -->
+              <div class="mb-3">
+                <button class="filter-toggle" type="button" onclick="toggleFilter('ageFilter')">AGE <span
+                    class="float-end">+</span></button>
+                <div id="ageFilter" class="filter-options d-none">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="age0to12" />
+                    <label class="form-check-label" for="age0to12">0–12 months</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="age12to24" />
+                    <label class="form-check-label" for="age12to24">12–24 months</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="age24to36" />
+                    <label class="form-check-label" for="age24to36">24–36 months</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- BRAND Filter -->
+              <div class="mb-3">
+                <button class="filter-toggle" type="button" onclick="toggleFilter('brandFilter')">BRAND <span
+                    class="float-end">+</span></button>
+                <div id="brandFilter" class="filter-options d-none">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="brandPigeon" />
+                    <label class="form-check-label" for="brandPigeon">Pigeon</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="brandAvent" />
+                    <label class="form-check-label" for="brandAvent">Avent</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="brandChickoo" />
+                    <label class="form-check-label" for="brandChickoo">Chickoo</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fabric filter -->
+
+              <div class="mb-3">
+                <button class="filter-toggle" type="button" onclick="toggleFilter('fabricFilter')">
+                  FABRIC <span class="float-end">+</span>
+                </button>
+                <div id="fabricFilter" class="filter-options d-none">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="fabricCotton" />
+                    <label class="form-check-label" for="fabricCotton">Cotton</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="fabricOrganza" />
+                    <label class="form-check-label" for="fabricOrganza">ORGANZA</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="fabricWoolen" />
+                    <label class="form-check-label" for="fabricWoolen">WOOLEN</label>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Sleeeves filter -->
+              <div class="mb-3">
+                <button class="filter-toggle" type="button" onclick="toggleFilter('sleevesFilter')">
+                  SLEEVES <span class="float-end">+</span>
+                </button>
+                <div id="sleevesFilter" class="filter-options d-none">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="sleevesFull" />
+                    <label class="form-check-label" for="sleevesFull">Full sleeve</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="sleevesShort" />
+                    <label class="form-check-label" for="sleevesShort">Short sleeve</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="sleevesThreefourth" />
+                    <label class="form-check-label" for="sleevesThreefourth">3/4 sleeve</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="sleevesSleeveless" />
+                    <label class="form-check-label" for="sleevesSleeveless">Sleeveless</label>
+                  </div>
+                </div>
+              </div> 
+
+
+            </div>
+          </div>
+
+          <!-- Right Product Grid Section -->
+          <div class="col-md-9 products-col">
+            <div class="row">
+              <!-- Example Product Cards -->
+              <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                  <img src="./assets/feeding_images/image 28.png" alt="Teether" />
+                  <div class="product-name">Multi-Textured Silicone Teether</div>
+                  <div class="product-price">₹120</div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                  <img src="./assets/feeding_images/image 29.png" alt="Breast Pump" />
+                  <div class="product-name">Advanced Digital Electric Breast Pump</div>
+                  <div class="product-price">₹165</div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                  <img src="./assets/feeding_images/image.png" alt="Sipper" />
+                  <div class="product-name">Baby Mini Sipper Bottle</div>
+                  <div class="product-price">₹250</div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                  <img src="../assetsfeeding_images/image1.png" alt="Teether" />
+                  <div class="product-name">Multi-Textured Silicone Teether</div>
+                  <div class="product-price">₹699</div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                  <img src="../assets/feeding_images/image2.png" alt="Teether" />
+                  <div class="product-name">Multi-Textured Silicone Teether</div>
+                  <div class="product-price">₹165</div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                  <img src="../assets/feeding_images/image3.png" alt="Teether" />
+                  <div class="product-name">Multi-Textured Silicone Teether</div>
+                  <div class="product-price">₹250</div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                  <img src="../assets/feeding_images/image4.png" alt="Teether" />
+                  <div class="product-name">Multi-Textured Silicone Teether</div>
+                  <div class="product-price">₹699</div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                  <img src="../assets/feeding_images/image5.png" alt="Teether" />
+                  <div class="product-name">Multi-Textured Silicone Teether</div>
+                  <div class="product-price">₹699</div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                  <img src="../assets/feeding_images/image9.png" alt="Teether" />
+                  <div class="product-name">Multi-Textured Silicone Teether</div>
+                  <div class="product-price">₹699</div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                  <img src="../assets/image/feeding_images/image10.png" alt="Teether" />
+                  <div class="product-name">Multi-Textured Silicone Teether</div>
+                  <div class="product-price">₹159</div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                  <img src="../assets/feeding_images/image11.png" alt="Teether" />
+                  <div class="product-name">Multi-Textured Silicone Teether</div>
+                  <div class="product-price">₹159</div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                  <img src="../assets/feeding_images/image8.png" alt="Teether" />
+                  <div class="product-name">Multi-Textured Silicone Teether</div>
+                  <div class="product-price">₹159</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-info px-4 px-md-5 py-4">
+      <div class="container">
+        <h2 class="fw-bold mb-2">Baby feeding bottles</h2>
+        <p class="product-description mb-0">
+          Your new born baby’s primary source of nutrition is breast milk or formula. Feeding bottles allow your baby to satiate her hunger, no matter where the two of you are. These baby bottles are especially handy when you’re outdoors and may not be able to suckle your baby. You can slip a bottle into your child’s mouth to ensure that she doesn’t go hungry. Mothercare offers baby feeding bottles in various styles. Pick one that works for your baby.
+          <a href="#" class="more-link fw-bold"> More</a>
+        </p>
+      </div>
+    </section>
+    
+
+
+  </main>
+
+  <footer class="footer text-white py-4">
+    <div class="container me-4">
+      <div class="row text-center text-md-start">
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">COMPANY</h6>
+          <p><a href="#" class="footer-link">About Us</a></p>
+          <p><a href="#" class="footer-link">Why Us?</a></p>
+        </div>
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">SHOP</h6>
+          <p><a href="#" class="footer-link">Toys & Gifts</a></p>
+          <p><a href="#" class="footer-link">Best Sellers</a></p>
+          <p><a href="#" class="footer-link">Baby Essentials</a></p>
+          <p><a href="#" class="footer-link">Skincare & Bath</a></p>
+          <p><a href="#" class="footer-link">Feeding & Nursing</a></p>
+        </div>
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">SUPPORT</h6>
+          <p><a href="#" class="footer-link">Contact Us</a></p>
+          <p><a href="#" class="footer-link">FAQs</a></p>
+          <p><a href="#" class="footer-link">Shipping Info</a></p>
+          <p><a href="#" class="footer-link">Return & Refund Policy</a></p>
+          <p><a href="#" class="footer-link">Track Your Order</a></p>
+        </div>
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">STAY CONNECTED</h6>
+          <div class="d-flex justify-content-center justify-content-md-start gap-3 social-images">
+            <a href="#"><img src="../assets/icons/image.png" alt="Facebook" class="social-img"></a>
+            <a href="#"><img src="../assets/icons/twitter.png" alt="Twitter" class="social-img"></a>
+            <a href="#"><img src="../assets/icons/insta.png" alt="Instagram" class="social-img"></a>
+            <a href="#"><img src="../assets/icons/youtube.png" alt="YouTube" class="social-img"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Toggle -->
+  <script>
+    function toggleFilter(id) {
+      const filterDiv = document.getElementById(id);
+      filterDiv.classList.toggle('d-none');
+    }
+
+
+    // Product data array (would normally come from a database or API)
+const products = [
+  { 
+    name: "Multi-Textured Silicone Teether", 
+    price: 120, 
+    discount: 10, 
+    color: "Blue", 
+    type: "Toys", 
+    age: "0–12 months", 
+    brand: "Pigeon",
+    image: "./assets/feeding_images/image 28.png"
+  },
+  { 
+    name: "Advanced Digital Electric Breast Pump", 
+    price: 165, 
+    discount: 20, 
+    color: "Grey", 
+    type: "Gear", 
+    age: "12–24 months", 
+    brand: "Avent",
+    image: "./assets/feeding_images/image 29.png"
+  },
+  { 
+    name: "Baby Mini Sipper Bottle", 
+    price: 250, 
+    discount: 15, 
+    color: "Pink", 
+    type: "Feeding Bottle", 
+    age: "24–36 months", 
+    brand: "Chickoo",
+    image: "./assets/feeding_images/image.png"
+  },
+  { 
+    name: "Multi-Textured Silicone Teether", 
+    price: 699, 
+    discount: 30, 
+    color: "Black", 
+    type: "Toys", 
+    age: "0–12 months", 
+    brand: "Pigeon",
+    image: "./assets/feeding_images/image1.png"
+  },
+  { 
+    name: "Multi-Textured Silicone Teether", 
+    price: 165, 
+    discount: 25, 
+    color: "Blue", 
+    type: "Grey", 
+    age: "12–24 months", 
+    brand: "Avent",
+    image: "./assets/feeding_images/image2.png"
+  },
+  { 
+    name: "Multi-Textured Silicone Teether", 
+    price: 250, 
+    discount: 40, 
+    color: "Blue", 
+    type: "Toys", 
+    age: "24–36 months", 
+    brand: "Chickoo",
+    image: "./assets/feeding_images/image3.png"
+  },
+  { 
+    name: "Multi-Textured Silicone Teether", 
+    price: 699, 
+    discount: 10, 
+    color: "Multicolor", 
+    type: "Toys", 
+    age: "0–12 months", 
+    brand: "Pigeon",
+    image: "./assets/feeding_images/image4.png"
+  },
+  { 
+    name: "Multi-Textured Silicone Teether", 
+    price: 699, 
+    discount: 20, 
+    color: "Red", 
+    type: "Toys", 
+    age: "12–24 months", 
+    brand: "Avent",
+    image: "./assets/feeding_images/image5.png"
+  },
+  { 
+    name: "Multi-Textured Silicone Teether", 
+    price: 699, 
+    discount: 30, 
+    color: "Blue", 
+    type: "Toys", 
+    age: "24–36 months", 
+    brand: "Chickoo",
+    image: "./assets/feeding_images/image9.png"
+  },
+  { 
+    name: "Multi-Textured Silicone Teether", 
+    price: 159, 
+    discount: 25, 
+    color: "Grey", 
+    type: "Toys", 
+    age: "0–12 months", 
+    brand: "Pigeon",
+    image: "./assets/feeding_images/image10.png"
+  },
+  { 
+    name: "Multi-Textured Silicone Teether", 
+    price: 159, 
+    discount: 40, 
+    color: "Grey", 
+    type: "Toys", 
+    age: "12–24 months", 
+    brand: "Avent",
+    image: "./assets/feeding_images/image11.png"
+  },
+  { 
+    name: "Multi-Textured Silicone Teether", 
+    price: 159, 
+    discount: 10, 
+    color: "Red", 
+    type: "Toys", 
+    age: "24–36 months", 
+    brand: "Chickoo",
+    image: "./assets/feeding_images/image8.png"
+  }
+];
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="../script/script1.js"></script>
+
+</body>
+
+</html>
