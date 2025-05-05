@@ -201,7 +201,6 @@
   text-decoration: underline;
 }
 
-    /* Adjustments for 768px and 425px screens */
     @media (max-width: 768px) {
       .nav-bar {
         margin: 0 20px;
@@ -393,9 +392,14 @@
 
             <!-- Right Icons -->
             <div class="right-icons d-flex align-items-center justify-content-center">
-              <img src="../assets/icons/Group.png" alt="User">
+              <img src="../assets/icons/Group.png" alt="User"  onclick="window.location.href='../index.html'" style="cursor:pointer;">
               <img src="../assets/icons/Group 233.png" alt="Wishlist">
-              <img src="../assets/icons/cart.png" alt="Cart">
+              <div class="cart-icon position-relative" onclick="window.location.href='./pages/cart.html'" style="cursor:pointer;">
+                <img src="../assets/icons/cart.png" alt="Cart">
+                <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  0
+                </span>
+              </div>
             </div>
           </div>
 
@@ -419,7 +423,6 @@
       <div class="container-fluid">
         <div class="row mt-5">
 
-          <!-- Left Filter Section -->
           <div class="col-md-3 filters-col">
             <div class="filter-section">
 
@@ -718,24 +721,24 @@
       <div class="row text-center text-md-start">
         <div class="col-12 col-md-3 mb-3">
           <h6 class="fw-bold">COMPANY</h6>
-          <p><a href="#" class="footer-link">About Us</a></p>
-          <p><a href="#" class="footer-link">Why Us?</a></p>
+          <p><a href="./about.html" class="footer-link">About Us</a></p>
+          <p><a href="./why_us.html" class="footer-link">Why Us?</a></p>
         </div>
         <div class="col-12 col-md-3 mb-3">
           <h6 class="fw-bold">SHOP</h6>
-          <p><a href="#" class="footer-link">Toys & Gifts</a></p>
-          <p><a href="#" class="footer-link">Best Sellers</a></p>
-          <p><a href="#" class="footer-link">Baby Essentials</a></p>
-          <p><a href="#" class="footer-link">Skincare & Bath</a></p>
-          <p><a href="#" class="footer-link">Feeding & Nursing</a></p>
+          <p><a href="./toys.html" class="footer-link">Toys & Gifts</a></p>
+          <p><a href="./clothing.html" class="footer-link">Best Sellers</a></p>
+          <p><a href="./bedding.html" class="footer-link">Baby Essentials</a></p>
+          <p><a href="./skincare.html" class="footer-link">Skincare & Bath</a></p>
+          <p><a href="./feeding.html" class="footer-link">Feeding & Nursing</a></p>
         </div>
         <div class="col-12 col-md-3 mb-3">
           <h6 class="fw-bold">SUPPORT</h6>
           <p><a href="#" class="footer-link">Contact Us</a></p>
-          <p><a href="#" class="footer-link">FAQs</a></p>
+          <p><a href="./faq.html" class="footer-link">FAQs</a></p>
           <p><a href="#" class="footer-link">Shipping Info</a></p>
-          <p><a href="#" class="footer-link">Return & Refund Policy</a></p>
-          <p><a href="#" class="footer-link">Track Your Order</a></p>
+          <p><a href="./return.html" class="footer-link">Return & Refund Policy</a></p>
+          <p><a href="./trackorder.html" class="footer-link">Track Your Order</a></p>
         </div>
         <div class="col-12 col-md-3 mb-3">
           <h6 class="fw-bold">STAY CONNECTED</h6>
@@ -750,7 +753,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript for Toggle -->
+  <!-- Toggle -->
   <script>
     function toggleFilter(id) {
       const filterDiv = document.getElementById(id);
@@ -763,7 +766,7 @@
     name:  "Multi-Textures Silicone Teether",
     price: 120,
     discount: 20,
-    color: "Grey",
+    color: "",
     type: "Bath and Skin Care",
     age: "12–24 months",
     brand: "Avent",
@@ -775,7 +778,7 @@
     name: "Advanced Digital Electric Breast Pum",
     price: 165,
     discount: 20,
-    color: "Grey",
+    color: "",
     type: "Bath and Skin Care",
     age: "12–24 months",
     brand: "Avent",
@@ -787,7 +790,7 @@
     name: "Baby Mini sipper bottle",
     price: 250,
     discount: 15,
-    color: "Grey",
+    color: "",
     type: "Bath and Skin Care",
     age: "24–36 months",
     brand: "Chickoo",
@@ -799,10 +802,10 @@
     name: "Portable Baby Bottle Warmer",
     price: 699,
     discount: 25,
-    color: "Pink",
+    color: "",
     type: "Bath and Skin Care",
     age: "0–12 months",
-    brand: "Pink",
+    brand: "Avent",
     fabric: "",
     sleeves: "",
     image: "./assets/skincare/image4.jpg"
@@ -811,7 +814,7 @@
     name: "Advanced Digital Electric Breast",
     price: 165,
     discount: 5,
-    color: "Multicolor",
+    color: "",
     type: "Bath and Skin Care",
     age: "12–24 months",
     brand: "Avent",
@@ -823,7 +826,7 @@
     name: "Bettle Baby Straw Sipper Water",
     price: 250,
     discount: 30,
-    color: "Orange",
+    color: "",
     type: "Bath and Skin Care",
     age: "0–12 months",
     brand: "Chickoo",
@@ -835,7 +838,7 @@
     name: "Multi-Textured Silicone Teether",
     price: 699,
     discount: 15,
-    color: "Black",
+    color: "",
     type: "Bath and Skin Care",
     age: "12–24 months",
     brand: "Pigeon",
@@ -847,7 +850,7 @@
     name: "Advanced Digital Electric Teether",
     price: 699,
     discount: 10,
-    color: "Pink",
+    color: "",
     type: "Bath and Skin Care",
     age: "24–36 months",
     brand: "Avent",
@@ -859,7 +862,7 @@
     name: "Tritan Dino Straw Sipper Bottle",
     price: 699,
     discount: 20,
-    color: "Multicolor",
+    color: "",
     type: "Bath and Skin Care",
     age: "0–12 months",
     brand: "Chickoo",
@@ -871,7 +874,7 @@
     name: "Premiun steel feeding Bottle ",
     price: 159,
     discount: 10,
-    color: "Blue",
+    color: "",
     type: "Bath and Skin Care",
     age: "0–12 months",
     brand: "Pigeon",
@@ -883,7 +886,7 @@
     name: "Baby Sipper Cup with Spout ",
     price: 159,
     discount: 18,
-    color: "Multicolor",
+    color: "",
     type: "Bath and Skin Care",
     age: "24–36 months",
     brand: "Avent",
@@ -895,7 +898,7 @@
     name: "Steebo Safari Stainless 500ml",
     price: 159,
     discount: 12,
-    color: "Multicolor",
+    color: "",
     type: "Bath and Skin Care",
     age: "12–24 months",
     brand: "Chickoo",
@@ -910,6 +913,7 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <script src="../script/script1.js"></script>
+  <script src="../script/cart.js"></script>
 
 </body>
 

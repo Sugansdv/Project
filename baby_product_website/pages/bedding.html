@@ -66,7 +66,6 @@
     }
 
 
-    /* Banner section */
     .banner {
       position: relative;
       width: 100%;
@@ -357,18 +356,15 @@
 
 <body>
   <header>
-    <!-- Top Bar -->
     <div class="top-bar text-center">
       <h5 class="py-3 fw-bold">New Parent Perk: 15% OFF your first HugBug Baby Order! <span class="heart-icon">💗</span>
       </h5>
     </div>
 
-    <!-- Navbar -->
     <div class="nav-bar">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid d-flex align-items-center justify-content-between">
 
-          <!-- Left Logo -->
           <div class="d-flex align-items-center left">
             <img src="../assets/image/home_screen/log.png" alt="Logo">
           </div>
@@ -379,7 +375,6 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <!-- Collapsible Navbar Content -->
           <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
@@ -391,11 +386,15 @@
               <li class="nav-item"><a class="nav-link" href="./gear.html">Gear</a></li>
             </ul>
 
-            <!-- Right Icons -->
             <div class="right-icons d-flex align-items-center justify-content-center">
-              <img src="../assets/icons/Group.png" alt="User">
+              <img src="../assets/icons/Group.png" alt="User"  onclick="window.location.href='../index.html'" style="cursor:pointer;">
               <img src="../assets/icons/Group 233.png" alt="Wishlist">
-              <img src="../assets/icons/cart.png" alt="Cart">
+              <div class="cart-icon position-relative" onclick="window.location.href='./pages/cart.html'" style="cursor:pointer;">
+                <img src="../assets/icons/cart.png" alt="Cart">
+                <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  0
+                </span>
+              </div>
             </div>
           </div>
 
@@ -419,7 +418,6 @@
       <div class="container-fluid">
         <div class="row mt-5">
 
-          <!-- Left Filter Section -->
           <div class="col-md-3 filters-col">
             <div class="filter-section">
 
@@ -618,10 +616,8 @@
             </div>
           </div>
 
-          <!-- Right Product Grid Section -->
           <div class="col-md-9 products-col">
             <div class="row">
-              <!-- Example Product Cards -->
               <div class="col-md-4 col-sm-6">
                 <div class="product-card">
                   <img src="./assets/bedding/image1.jpg" alt="image1" />
@@ -719,24 +715,24 @@
       <div class="row text-center text-md-start">
         <div class="col-12 col-md-3 mb-3">
           <h6 class="fw-bold">COMPANY</h6>
-          <p><a href="#" class="footer-link">About Us</a></p>
-          <p><a href="#" class="footer-link">Why Us?</a></p>
+          <p><a href="./about.html" class="footer-link">About Us</a></p>
+          <p><a href="./why_us.html" class="footer-link">Why Us?</a></p>
         </div>
         <div class="col-12 col-md-3 mb-3">
           <h6 class="fw-bold">SHOP</h6>
-          <p><a href="#" class="footer-link">Toys & Gifts</a></p>
-          <p><a href="#" class="footer-link">Best Sellers</a></p>
-          <p><a href="#" class="footer-link">Baby Essentials</a></p>
-          <p><a href="#" class="footer-link">Skincare & Bath</a></p>
-          <p><a href="#" class="footer-link">Feeding & Nursing</a></p>
+          <p><a href="./toys.html" class="footer-link">Toys & Gifts</a></p>
+          <p><a href="./clothing.html" class="footer-link">Best Sellers</a></p>
+          <p><a href="./bedding.html" class="footer-link">Baby Essentials</a></p>
+          <p><a href="./skincare.html" class="footer-link">Skincare & Bath</a></p>
+          <p><a href="./feeding.html" class="footer-link">Feeding & Nursing</a></p>
         </div>
         <div class="col-12 col-md-3 mb-3">
           <h6 class="fw-bold">SUPPORT</h6>
           <p><a href="#" class="footer-link">Contact Us</a></p>
-          <p><a href="#" class="footer-link">FAQs</a></p>
+          <p><a href="./faq.html" class="footer-link">FAQs</a></p>
           <p><a href="#" class="footer-link">Shipping Info</a></p>
-          <p><a href="#" class="footer-link">Return & Refund Policy</a></p>
-          <p><a href="#" class="footer-link">Track Your Order</a></p>
+          <p><a href="./return.html" class="footer-link">Return & Refund Policy</a></p>
+          <p><a href="./trackorder.html" class="footer-link">Track Your Order</a></p>
         </div>
         <div class="col-12 col-md-3 mb-3">
           <h6 class="fw-bold">STAY CONNECTED</h6>
@@ -751,18 +747,166 @@
     </div>
   </footer>
 
-  <!-- JavaScript for Toggle -->
+  <!-- Toggle -->
   <script>
     function toggleFilter(id) {
       const filterDiv = document.getElementById(id);
       filterDiv.classList.toggle('d-none');
     }
+
+    const products = [
+    {
+    name:  "Multi-Textures Silicone Teether",
+    price: 120,
+    discount: 20,
+    color: "Blue",
+    type: "Bedding",
+    age: "12–24 months",
+    brand: "Avent",
+    fabric: "",
+    sleeves: "",
+    image: "./assets/bedding/image1.jpg"
+  },
+  {
+    name: "Advanced Digital Electric Breast Pum",
+    price: 165,
+    discount: 20,
+    color: "Blue",
+    type: "Bedding",
+    age: "12–24 months",
+    brand: "Avent",
+    fabric: "",
+    sleeves: "",
+    image: "./assets/bedding/image2.jpg"
+  },
+  {
+    name: "Baby Mini sipper bottle",
+    price: 250,
+    discount: 15,
+    color: "Black",
+    type: "Bedding",
+    age: "24–36 months",
+    brand: "Chickoo",
+    fabric: "",
+    sleeves: "",
+    image: "./assets/bedding/image3.jpg"
+  },
+  {
+    name: "Portable Baby Bottle Warmer",
+    price: 699,
+    discount: 25,
+    color: "Black",
+    type: "Bedding",
+    age: "0–12 months",
+    brand: "Avent",
+    fabric: "",
+    sleeves: "",
+    image: "./assets/bedding/image4.jpg"
+  },
+  {
+    name: "Advanced Digital Electric Breast",
+    price: 165,
+    discount: 5,
+    color: "Red",
+    type: "Bedding",
+    age: "12–24 months",
+    brand: "Avent",
+    fabric: "",
+    sleeves: "",
+    image: "./assets/bedding/image5.jpg"
+  },
+  {
+    name: "Bettle Baby Straw Sipper Water",
+    price: 250,
+    discount: 30,
+    color: "Blue",
+    type: "Bedding",
+    age: "0–12 months",
+    brand: "Chickoo",
+    fabric: "",
+    sleeves: "",
+    image: "./assets/bedding/image6.jpg"
+  },
+  {
+    name: "Multi-Textured Silicone Teether",
+    price: 699,
+    discount: 15,
+    color: "Green",
+    type: "Bedding",
+    age: "12–24 months",
+    brand: "Pigeon",
+    fabric: "",
+    sleeves: "",
+    image: "./assets/bedding/image7.jpg"
+  },
+  {
+    name: "Advanced Digital Electric Teether",
+    price: 699,
+    discount: 10,
+    color: "Blue",
+    type: "Bedding",
+    age: "24–36 months",
+    brand: "Avent",
+    fabric: "",
+    sleeves: "",
+    image: "./assets/bedding/image8.jpg"
+  },
+  {
+    name: "Tritan Dino Straw Sipper Bottle",
+    price: 699,
+    discount: 20,
+    color: "Black",
+    type: "Bedding",
+    age: "0–12 months",
+    brand: "Chickoo",
+    fabric: "",
+    sleeves: "",
+    image: "./assets/bedding/image9.jpg"
+  },
+  {
+    name: "Premiun steel feeding Bottle ",
+    price: 159,
+    discount: 10,
+    color: "Red",
+    type: "Bedding",
+    age: "0–12 months",
+    brand: "Pigeon",
+    fabric: "",
+    sleeves: "",
+    image: "./assets/bedding/image10.jpg"
+  },
+  {
+    name: "Baby Sipper Cup with Spout ",
+    price: 159,
+    discount: 18,
+    color: "Multicolor",
+    type: "Bedding",
+    age: "24–36 months",
+    brand: "Avent",
+    fabric: "",
+    sleeves: "",
+    image: "./assets/bedding/image11.jpg"
+  },
+  {
+    name: "Steebo Safari Stainless 500ml",
+    price: 159,
+    discount: 12,
+    color: "Red",
+    type: "Bedding",
+    age: "12–24 months",
+    brand: "Chickoo",
+    fabric: "",
+    sleeves: "",
+    image: "./assets/bedding/image12.jpg"
+  }
+];
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <!-- <script src="../script/script1.js"></script> -->
+  <script src="../script/cart.js"></script>
 
 </body>
 
