@@ -74,7 +74,6 @@ function filterProducts() {
   displayProducts(filteredProducts);
 }
 
-// Helper function to get selected checkbox values
 function getSelectedCheckboxValues(prefix) {
   const checkboxes = document.querySelectorAll(`input[type="checkbox"][id^="${prefix}"]:checked`);
   return Array.from(checkboxes).map(checkbox => {
@@ -83,7 +82,6 @@ function getSelectedCheckboxValues(prefix) {
   });
 }
 
-// Function to display products
 function displayProducts(productsToDisplay) {
   const productsContainer = document.querySelector('.products-col .row');
   productsContainer.innerHTML = '';
@@ -107,12 +105,10 @@ function displayProducts(productsToDisplay) {
   });
 }
 
-// Attach event listeners
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('.filter-options input[type="checkbox"]').forEach(checkbox => {
     checkbox.addEventListener('change', filterProducts);
   });
 
-  // Initial display
   displayProducts(products);
 });
