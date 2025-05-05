@@ -49,29 +49,24 @@
 
 <body>
   <header>
-    <!-- Top Bar -->
     <div class="top-bar text-center">
       <h5 class="py-3 fw-bold">New Parent Perk: 15% OFF your first HugBug Baby Order! <span class="heart-icon">💗</span>
       </h5>
     </div>
 
-    <!-- Navbar -->
     <div class="nav-bar">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid d-flex align-items-center justify-content-between">
 
-          <!-- Left Logo -->
           <div class="d-flex align-items-center left">
             <img src="../assets/image/home_screen/log.png" alt="Logo">
           </div>
 
-          <!-- Toggler Button (for small & medium screens) -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
             aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <!-- Collapsible Navbar Content -->
           <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
@@ -83,11 +78,15 @@
               <li class="nav-item"><a class="nav-link" href="./gear.html">Gear</a></li>
             </ul>
 
-            <!-- Right Icons -->
             <div class="right-icons d-flex align-items-center justify-content-center">
-              <img src="../assets/icons/Group.png" alt="User">
+              <img src="../assets/icons/Group.png" alt="User"  onclick="window.location.href='../index.html'" style="cursor:pointer;">
               <img src="../assets/icons/Group 233.png" alt="Wishlist">
-              <img src="../assets/icons/cart.png" alt="Cart">
+              <div class="cart-icon position-relative" onclick="window.location.href='./pages/cart.html'" style="cursor:pointer;">
+                <img src="../assets/icons/cart.png" alt="Cart">
+                <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  0
+                </span>
+              </div>
             </div>
           </div>
 
@@ -152,7 +151,7 @@
       </div>
     </footer>
   
-    <!-- JavaScript for Toggle -->
+    <!-- Toggle -->
     <script>
       function toggleFilter(id) {
         const filterDiv = document.getElementById(id);

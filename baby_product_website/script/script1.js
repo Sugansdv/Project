@@ -1,6 +1,5 @@
 
 
-// Function to filter products based on selected filters
 function filterProducts() {
   const selectedFilters = {
     price: getSelectedCheckboxValues('price'),
@@ -15,7 +14,7 @@ function filterProducts() {
   console.log("Selected Fabric Filters:", selectedFilters.fabric);
 
   const filteredProducts = products.filter(product => {
-    // Price filter
+   
     if (selectedFilters.price.length > 0) {
       const priceMatch = selectedFilters.price.some(range => {
         if (range === '₹ 0–500') return product.price >= 0 && product.price <= 500;
@@ -27,7 +26,6 @@ function filterProducts() {
       if (!priceMatch) return false;
     }
 
-    // Discount filter
     if (selectedFilters.discount.length > 0) {
       const discountMatch = selectedFilters.discount.some(discount => {
         const minDiscount = parseInt(discount);
@@ -36,34 +34,28 @@ function filterProducts() {
       if (!discountMatch) return false;
     }
 
-    // Color filter
     if (selectedFilters.color.length > 0 && !selectedFilters.color.includes(product.color)) {
       return false;
     }
 
-    // Product type filter
     if (selectedFilters.productType.length > 0 && !selectedFilters.productType.includes(product.type)) {
       return false;
     }
 
-    // Age filter
     if (selectedFilters.age.length > 0 && !selectedFilters.age.includes(product.age)) {
       return false;
     }
 
-    // Brand filter
     if (selectedFilters.brand.length > 0 && !selectedFilters.brand.includes(product.brand)) {
       return false;
     }
 
-    // Fabric filter
     if (selectedFilters.fabric.length > 0 &&
       !selectedFilters.fabric.some(f => f.toLowerCase() === product.fabric.toLowerCase())) {
     return false;
   }
   
 
-    // Sleeves filter
     if (selectedFilters.sleeves.length > 0 && !selectedFilters.sleeves.includes(product.sleeves)) {
       return false;
     }

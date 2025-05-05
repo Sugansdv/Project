@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Wishlist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    .top-bar h5 {
+      color: #ffffff;
+      background-color: #025533;
+    }
+    .nav-bar {
+      margin: 0 50px;
+    }
+    .nav-link {
+      color: #025533 !important;
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-right: 1.5rem;
+    }
+    .nav-link:focus,
+    .nav-link:active {
+      color: #025533 !important;
+      text-decoration: none;
+      outline: none;
+    }
+    .nav-link:hover {
+      color: #025533 !important;
+      cursor: pointer;
+      border-bottom: 2px solid #025533;
+    }
+    .right-icons img {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+    .left img {
+      width: 100%;
+      min-height: 15vh;
+    }
+    .navbar-toggler-icon {
+      background-image: url("../assets/toggle.png");
+    }
+    .footer {
+      background-color: #004a2f;
+    }
+    .footer-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+    .social-img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      transition: transform 0.2s;
+    }
+    .social-img:hover {
+      transform: scale(1.1);
+    }
+    .wishlist-item {
+      border-bottom: 1px solid #eee;
+      padding: 20px 0;
+    }
+    .wishlist-item img {
+      max-width: 100px;
+      height: auto;
+    }
+    .remove-btn {
+      color: #ff0000;
+      cursor: pointer;
+    }
+    .empty-wishlist {
+      text-align: center;
+      padding: 50px;
+    }
+    @media (max-width: 768px) {
+      .nav-bar {
+        margin: 0 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top-bar text-center">
+      <h5 class="py-3 fw-bold">New Parent Perk: 15% OFF your first HugBug Baby Order! <span class="heart-icon">💗</span></h5>
+    </div>
+
+    <div class="nav-bar">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center left">
+            <img src="../assets/image/home_screen/log.png" alt="Logo">
+          </div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                  aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="./feeding.html">Feeding</a></li>
+              <li class="nav-item"><a class="nav-link" href="./clothing.html">Clothing</a></li>
+              <li class="nav-item"><a class="nav-link" href="./toys.html">Toys</a></li>
+              <li class="nav-item"><a class="nav-link" href="./skincare.html">Bath & Skincare</a></li>
+              <li class="nav-item"><a class="nav-link" href="./bedding.html">Bedding</a></li>
+              <li class="nav-item"><a class="nav-link" href="./gear.html">Gear</a></li>
+            </ul>
+
+            <div class="right-icons d-flex align-items-center justify-content-center">
+              <img src="../assets/icons/Group.png" alt="User" onclick="window.location.href='../index.html'" style="cursor:pointer;">
+              <div class="wishlist position-relative me-3" style="cursor: pointer;">
+                <img src="../assets/icons/Group 233.png" alt="Wishlist">
+                <span id="wishlist-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  0
+                </span>
+              </div>
+              <div class="cart-icon position-relative" onclick="window.location.href='./cart.html'" style="cursor:pointer;">
+                <img src="../assets/icons/cart.png" alt="Cart">
+                <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  0
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <h2 class="mb-4">My Wishlist</h2>
+    <div id="wishlist-container">
+    </div>
+    <div id="empty-wishlist" class="empty-wishlist" style="display: none;">
+      <h4>Your wishlist is empty</h4>
+      <p>Start adding items to your wishlist!</p>
+      <a href="../index.html" class="btn btn-primary">Continue Shopping</a>
+    </div>
+  </main>
+
+  <footer class="footer text-white py-4">
+    <div class="container me-4">
+      <div class="row text-center text-md-start">
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">COMPANY</h6>
+          <p><a href="./pages/about.html" class="footer-link">About Us</a></p>
+          <p><a href="./pages/why_us.html" class="footer-link">Why Us?</a></p>
+        </div>
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">SHOP</h6>
+          <p><a href="./pages/toys.html" class="footer-link">Toys & Gifts</a></p>
+          <p><a href="./pages/clothing.html" class="footer-link">Best Sellers</a></p>
+          <p><a href="./pages/toys.html" class="footer-link">Baby Essentials</a></p>
+          <p><a href="./pages/skincare.html" class="footer-link">Skincare & Bath</a></p>
+          <p><a href="./pages/feeding.html" class="footer-link">Feeding & Nursing</a></p>
+        </div>
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">SUPPORT</h6>
+          <p><a href="#" class="footer-link">Contact Us</a></p>
+          <p><a href="./pages/faq.html" class="footer-link">FAQs</a></p>
+          <p><a href="#" class="footer-link">Shipping Info</a></p>
+          <p><a href="./pages/return.html" class="footer-link">Return & Refund Policy</a></p>
+          <p><a href="./pages/trackorder.html" class="footer-link">Track Your Order</a></p>
+        </div>
+        <div class="col-12 col-md-3 mb-3">
+          <h6 class="fw-bold">STAY CONNECTED</h6>
+          <div class="d-flex justify-content-center justify-content-md-start gap-3 social-images">
+            <a href="#"><img src="../assets/icons/image.png" alt="Facebook" class="social-img"></a>
+            <a href="#"><img src="../assets/icons/twitter.png" alt="Twitter" class="social-img"></a>
+            <a href="#"><img src="../assets/icons/insta.png" alt="Instagram" class="social-img"></a>
+            <a href="#"><img src="../assets/icons/youtube.png" alt="YouTube" class="social-img"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+      const container = document.getElementById('wishlist-container');
+      const emptyMessage = document.getElementById('empty-wishlist');
+      
+      const countElement = document.getElementById('wishlist-count');
+      if (countElement) {
+        countElement.textContent = wishlist.length;
+      }
+      
+      if (wishlist.length === 0) {
+        emptyMessage.style.display = 'block';
+        container.style.display = 'none';
+      } else {
+        emptyMessage.style.display = 'none';
+        container.style.display = 'block';
+        
+        wishlist.forEach(item => {
+          const itemElement = document.createElement('div');
+          itemElement.className = 'row wishlist-item align-items-center';
+          itemElement.innerHTML = `
+            <div class="col-md-2">
+              <img src="${item.image}" alt="${item.name}" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+              <h5>${item.name}</h5>
+              <p class="price">${item.price}</p>
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-cart btn-primary add-to-cart">Add to Cart</button>
+            </div>
+            <div class="col-md-2">
+              <span class="remove-btn" data-id="${item.id}">🗑️</span>
+            </div>
+          `;
+          container.appendChild(itemElement);
+        });
+        
+        document.querySelectorAll('.remove-btn').forEach(button => {
+          button.addEventListener('click', function() {
+            const productId = this.getAttribute('data-id');
+            const updatedWishlist = wishlist.filter(item => item.id !== productId);
+            localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
+            location.reload();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="../script/cart.js"></script>
+</body>
+</html>

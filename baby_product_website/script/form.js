@@ -1,7 +1,7 @@
 document.getElementById('subscribeForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const email = document.getElementById('emailInput').value.trim();
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // ✅ Fixed regex
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
     
     if (emailPattern.test(email)) {
       const modal = new bootstrap.Modal(document.getElementById('subscribeModal'));
