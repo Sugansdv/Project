@@ -146,8 +146,7 @@
 
   <main class="container my-5">
     <h2 class="mb-4">My Wishlist</h2>
-    <div id="wishlist-container">
-    </div>
+    <div id="wishlist-container"></div>
     <div id="empty-wishlist" class="empty-wishlist" style="display: none;">
       <h4>Your wishlist is empty</h4>
       <p>Start adding items to your wishlist!</p>
@@ -195,15 +194,22 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   
   <script>
+
+function toggleFilter(id) {
+      const filterDiv = document.getElementById(id);
+      filterDiv.classList.toggle('d-none');
+    }
+
+
     document.addEventListener('DOMContentLoaded', function() {
       const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+      updateWishlistCount();
+      updateCartCount();
+      
       const container = document.getElementById('wishlist-container');
       const emptyMessage = document.getElementById('empty-wishlist');
-      
-      const countElement = document.getElementById('wishlist-count');
-      if (countElement) {
-        countElement.textContent = wishlist.length;
-      }
       
       if (wishlist.length === 0) {
         emptyMessage.style.display = 'block';
@@ -212,38 +218,114 @@
         emptyMessage.style.display = 'none';
         container.style.display = 'block';
         
-        wishlist.forEach(item => {
-          const itemElement = document.createElement('div');
-          itemElement.className = 'row wishlist-item align-items-center';
-          itemElement.innerHTML = `
+        container.innerHTML = wishlist.map(item => `
+          <div class="row wishlist-item align-items-center mb-3" data-id="${item.id}">
             <div class="col-md-2">
-              <img src="${item.image}" alt="${item.name}" class="img-fluid">
+              <img src="${item.image}" alt="${item.name}" class="img-fluid" style="max-width: 100px;">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
               <h5>${item.name}</h5>
               <p class="price">${item.price}</p>
             </div>
-            <div class="col-md-2">
-              <button class="btn btn-cart btn-primary add-to-cart">Add to Cart</button>
+            <div class="col-md-3">
+              <button class="btn btn-primary move-to-cart">Add to Cart</button>
             </div>
-            <div class="col-md-2">
-              <span class="remove-btn" data-id="${item.id}">🗑️</span>
+            <div class="col-md-3">
+              <button class="btn btn-outline-danger remove-from-wishlist">Remove</button>
             </div>
-          `;
-          container.appendChild(itemElement);
-        });
+          </div>
+        `).join('');
         
-        document.querySelectorAll('.remove-btn').forEach(button => {
+        addWishlistEventListeners();
+      }
+
+      function updateWishlistCount() {
+        const countElement = document.getElementById('wishlist-count');
+        if (countElement) {
+          countElement.textContent = wishlist.length;
+        }
+      }
+      
+      function updateCartCount() {
+        const cartCountElement = document.getElementById('cart-count');
+        if (cartCountElement) {
+          const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+          cartCountElement.textContent = totalItems;
+        }
+      }
+      
+      function addWishlistEventListeners() {
+        document.querySelectorAll('.remove-from-wishlist').forEach(button => {
           button.addEventListener('click', function() {
-            const productId = this.getAttribute('data-id');
+            const itemElement = this.closest('.wishlist-item');
+            const productId = itemElement.getAttribute('data-id');
+
             const updatedWishlist = wishlist.filter(item => item.id !== productId);
             localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
-            location.reload();
+            
+            updateWishlistCount();
+            itemElement.remove();
+            
+            if (updatedWishlist.length === 0) {
+              emptyMessage.style.display = 'block';
+              container.style.display = 'none';
+            }
+          });
+        });
+        
+       document.querySelectorAll('.move-to-cart').forEach(button => {
+          button.addEventListener('click', function() {
+            const itemElement = this.closest('.wishlist-item');
+            const productId = itemElement.getAttribute('data-id');
+            const product = wishlist.find(item => item.id === productId);
+            
+            if (product) {
+              const priceText = product.price;
+              const price = parseFloat(priceText.replace(/[^\d.]/g, ''));
+              
+              let imagePath = product.image;
+              if (imagePath.startsWith('http')) {
+                imagePath = './assets/image/home_screen/' + imagePath.split('/').pop();
+              }
+              
+              const cartItem = {
+                id: product.id,
+                title: product.name, 
+                price: price,    
+                image: imagePath,    
+                quantity: 1
+              };
+              
+              const existingItem = cart.find(item => 
+                item.id === product.id || 
+                (item.title === cartItem.title && item.image === cartItem.image)
+              );
+              
+              if (existingItem) {
+                existingItem.quantity = (existingItem.quantity || 1) + 1;
+              } else {
+                cart.push(cartItem);
+              }
+              
+              localStorage.setItem('cart', JSON.stringify(cart));
+           
+              updateCartCount();
+        
+              const originalText = this.textContent;
+              this.textContent = '✓ Added!';
+              this.classList.remove('btn-primary');
+              this.classList.add('btn-success');
+              
+              setTimeout(() => {
+                this.textContent = originalText;
+                this.classList.add('btn-primary');
+                this.classList.remove('btn-success');
+              }, 1000);
+            }
           });
         });
       }
     });
-  </script>
-  <script src="../script/cart.js"></script>
+</script>
 </body>
 </html>

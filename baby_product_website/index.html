@@ -134,7 +134,7 @@
       }
       .right-icons img {
         margin: 0 5px;
-        width: 25px; /* Reduce icon size */
+        width: 25px;
       }
       .footer {
         text-align: center;
@@ -312,7 +312,7 @@
 
           <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
-              <!-- <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li> -->
+              <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
               <li class="nav-item"><a class="nav-link" href="./pages/feeding.html">Feeding</a></li>
               <li class="nav-item"><a class="nav-link" href="./pages/clothing.html">Clothing</a></li>
               <li class="nav-item"><a class="nav-link" href="./pages/toys.html">Toys</a></li>
@@ -420,8 +420,8 @@
                 <img src="./assets/image/home_screen/image7.png" class="img-fluid rounded shadow" alt="Product Image">
                 <button class="wishlist-btn">Add to Wishlist</button>
               </div>
-              <h5 class="card-title">Organic Cotton Onesie</h5>
-              <p class="price">₹ 500</p>
+              <h5 class="card-title">Stacking Rings</h5>
+              <p class="price">₹ 179</p>
               <button class="btn btn-cart">Add to cart</button>
             </div>
           </div>
@@ -432,8 +432,8 @@
                 <img src="./assets/image/home_screen/image19.png" class="img-fluid rounded shadow" alt="Product Image">
                 <button class="wishlist-btn">Add to Wishlist</button> 
               </div>
-              <h5 class="card-title">Organic Cotton Onesie</h5>
-              <p class="price">₹ 500</p>
+              <h5 class="card-title">Soft Teddy Bear</h5>
+              <p class="price">₹ 250</p>
               <button class="btn btn-cart">Add to cart</button>
             </div>
           </div>
@@ -444,8 +444,8 @@
                 <img src="./assets/image/home_screen/image20.png" class="img-fluid rounded shadow" alt="Product Image">
                 <button class="wishlist-btn">Add to Wishlist</button> 
               </div>
-              <h5 class="card-title">Organic Cotton Onesie</h5>
-              <p class="price">₹ 500</p>
+              <h5 class="card-title">Baby Booties</h5>
+              <p class="price">₹ 200</p>
               <button class="btn btn-cart">Add to cart</button>
             </div>
           </div>
@@ -652,7 +652,6 @@
 
 
 
-   // Function to update cart count display
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const cartCountElement = document.getElementById('cart-count');
@@ -660,8 +659,6 @@ function updateCartCount() {
     cartCountElement.textContent = cart.length;
   }
 }
-
-// Initialize cart count on page load
 document.addEventListener('DOMContentLoaded', updateCartCount);
 
 const addToCartButtons = document.querySelectorAll('.btn-cart');
@@ -676,12 +673,9 @@ addToCartButtons.forEach(button => {
     const imgElement = card.querySelector('.image-container img');
     let imagePath = imgElement.src;
 
-    // Convert absolute path to relative path if needed
     if (imagePath.startsWith('http')) {
-      // If using absolute URL, extract just the filename
       imagePath = './assets/image/home_screen/' + imagePath.split('/').pop();
     } else {
-      // Ensure relative paths are consistent
       const pathParts = imagePath.split('/');
       const fileName = pathParts[pathParts.length - 1];
       imagePath = './assets/image/home_screen/' + fileName;
@@ -696,7 +690,6 @@ addToCartButtons.forEach(button => {
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
-    // Check if product already exists in cart
     const existingProduct = cart.find(item => 
       item.title === product.title && item.image === product.image
     );
@@ -710,7 +703,6 @@ addToCartButtons.forEach(button => {
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
 
-    // Visual feedback
     const originalText = button.textContent;
     button.textContent = '✓ Added!';
     button.classList.add('btn-success');

@@ -50,7 +50,6 @@
   }
 
 
-  /* Banner section */
   .banner {
     position: relative;
     width: 100%;
@@ -131,7 +130,6 @@ text-decoration: none;
 text-decoration: underline;
 }
 
-  /* Adjustments for 768px and 425px screens */
   @media (max-width: 768px) {
     .nav-bar {
       margin: 0 20px;
