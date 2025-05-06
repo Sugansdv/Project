@@ -286,12 +286,12 @@
 
           <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link" href="./pages/feeding.html">Feeding</a></li>
-              <li class="nav-item"><a class="nav-link" href="./pages/clothing.html">Clothing</a></li>
-              <li class="nav-item"><a class="nav-link" href="./pages/toys.html">Toys</a></li>
-              <li class="nav-item"><a class="nav-link" href="./pages/skincare.html">Bath & Skincare</a></li>
-              <li class="nav-item"><a class="nav-link" href="./pages/bedding.html">Bedding</a></li>
-              <li class="nav-item"><a class="nav-link" href="./pages/gear.html">Gear</a></li>
+              <li class="nav-item"><a class="nav-link" href="./feeding.html">Feeding</a></li>
+              <li class="nav-item"><a class="nav-link" href="./clothing.html">Clothing</a></li>
+              <li class="nav-item"><a class="nav-link" href="./toys.html">Toys</a></li>
+              <li class="nav-item"><a class="nav-link" href="./skincare.html">Bath & Skincare</a></li>
+              <li class="nav-item"><a class="nav-link" href="./bedding.html">Bedding</a></li>
+              <li class="nav-item"><a class="nav-link" href="./gear.html">Gear</a></li>
             </ul>
 
             <div class="right-icons d-flex align-items-center justify-content-center">
@@ -385,18 +385,13 @@ function toggleFilter(id) {
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
-    function resolveImagePath(originalPath) {
+   function resolveImagePath(originalPath) {
   if (!originalPath) {
-    console.error("Image path is undefined!");
     return "https://via.placeholder.com/150?text=Image+Missing";
   }
-
-  const cleanPath = originalPath.replace(/^\.\.\//, "");
-
-  console.log(` Resolved path: ${cleanPath}`);
-
-  return `/${cleanPath}`;
+  return originalPath.replace(/^\.\.\//, "/");
 }
+
     
     function renderCart() {
       const container = document.getElementById('cart-items-container');
