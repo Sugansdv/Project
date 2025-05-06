@@ -386,11 +386,16 @@ function toggleFilter(id) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
     function resolveImagePath(originalPath) {
-  if (!originalPath) return '/assets/icons/image-placeholder.png';
-  if (originalPath.startsWith('http')) return originalPath;
-  
-  const cleanPath = originalPath.replace(/^\.\.\//, '');
-  return '/' + cleanPath;
+  if (!originalPath) {
+    console.error("Image path is undefined!");
+    return "https://via.placeholder.com/150?text=Image+Missing";
+  }
+
+  const cleanPath = originalPath.replace(/^\.\.\//, "");
+
+  console.log(` Resolved path: ${cleanPath}`);
+
+  return `/${cleanPath}`;
 }
     
     function renderCart() {
