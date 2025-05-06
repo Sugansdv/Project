@@ -386,16 +386,12 @@ function toggleFilter(id) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
     function resolveImagePath(originalPath) {
-      if (!originalPath) return '/assets/icons/image-placeholder.png';
-      if (originalPath.startsWith('http')) return originalPath;
-      
-      if (originalPath.includes('assets/image/home_screen')) {
-        return originalPath.startsWith('/') ? originalPath : '/' + originalPath;
-      }
-      
-      const filename = originalPath.split('/').pop();
-      return '/assets/image/home_screen/' + filename;
-    }
+  if (!originalPath) return '/assets/icons/image-placeholder.png';
+  if (originalPath.startsWith('http')) return originalPath;
+  
+  const cleanPath = originalPath.replace(/^\.\.\//, '');
+  return '/' + cleanPath;
+}
     
     function renderCart() {
       const container = document.getElementById('cart-items-container');
