@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home_services_Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/card.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand d-flex flex-column" href="#">
+          <img src="../assets/Logo image.png" alt="Logo" />
+          <span class="text-white">Home clean</span>
+        </a>
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="../index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">ABOUT US</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">SERVICES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./enquiry.html">ENQUIERY</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./login.html">LOG IN</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="p-5">
+    <div class="row border p-4 bg-white mb-4 align-items-center">
+      <div class="col-md-4 text-center">
+        <img src="../assets/electrical image.png" alt="Electrical Repair" class="img-fluid" style="max-width: 300px;">
+        <h5 class="mt-3">Electrical Services</h5>
+      </div>
+      <div class="col-md-8">
+        <div class="d-flex align-items-center mb-2 flex-wrap gap-2">
+          <h5 class="mb-0 fw-bold me-2">Reliable electrical solutions for your home</h5>
+          <a href="#" class="book-btn text-decoration-none" id="mainBookNowBtn">BOOK NOW</a>
+        </div>
+        <p class="text-success mb-1">Service start at <span class="price-highlight">₹100</span> per task</p>
+        <p>From fan and light installations to wiring and short-circuit repairs, our certified electricians ensure your home is safe and powered</p>
+
+        <div class="d-flex align-items-start gap-3 mt-3">
+          <div class="small">
+            <strong>UC Promise</strong><br/>
+            # Verified Professionals<br/>
+            # Safe Chemicals<br/>
+            # Superior Stain Removal
+          </div>
+          <img src="../assets/UC Promise image.png" alt="UC Promise Logo" class="img-fluid" style="max-width: 100px;">
+        </div>
+      </div>
+    </div>
+
+    <div id="serviceSelection" class="hidden">
+      <h4 class="text-center mb-4">Select Service</h4>
+      <div class="d-flex flex-wrap justify-content-center gap-4">
+        
+        <div class="card service-card text-center p-3 border rounded" style="width: 18rem;" onclick="toggleService(this, 'Appliance')">
+          <img src="../assets/electrical image.png" class="card-img-top mb-2" alt="Appliance Installation">
+          <h5 class="card-title">Appliance Installation</h5>
+          <div class="checkmark">✓</div>
+        </div>
+        
+        <div class="card service-card text-center p-3 border rounded" style="width: 18rem;" onclick="toggleService(this, 'Electrical ')">
+          <img src="../assets/electrical image.png" class="card-img-top mb-2" alt="Electrical Repair">
+          <h5 class="card-title">Electrical Repair</h5>
+          <div class="checkmark">✓</div>
+        </div>
+
+        <div class="align-self-center">
+          <button class="book-btn" onclick="bookSelectedServices()">BOOK NOW</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <div class="logo-section">
+          <img src="../assets/Logo image.png" alt="Home Clean Service Logo" class="logo ms-5" />
+          <h2 style="margin-top: -20px">Home Clean</h2>
+          <div class="social-media m-3">
+            <img src="../assets/facebook image.png" alt="Facebook" />
+            <img src="../assets/instagram icon.png" alt="Instagram" />
+            <img src="../assets/Youtube icon.png" alt="Youtube" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>QUICK LINKS</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./about.html">About us</a></li>
+          <li><a href="../index.html">Services</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>ALL CATEGORIES</h3>
+        <ul>
+          <li><a href="./cleaning.html">Cleaning</a></li>
+          <li><a href="./homerenovation.html">Home Renovation</a></li>
+          <li><a href="./plumbing.html">Plumbing</a></li>
+          <li><a href="./electrical.html">Electrical</a></li>
+          <li><a href="./painting.html">Painting</a></li>
+          <li><a href="./moving.html">Moving</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>CONTACT US</h3>
+        <div class="contact-info">
+          <p>
+            <span>
+              <img src="../assets/call icon.png" alt="Call" class="me-2" /></span>+91 345 24 567 76
+          </p>
+          <p>
+            <span>
+              <img src="../assets/email icon.png" alt="Email" class="me-2" /></span>homecleanservice@gmail.com
+          </p>
+          <p>
+            <span>
+              <img src="../assets/website icon.png" alt="Website" class="me-2" /></span>www.homeclean.com
+          </p>
+          <p>
+            <span>
+              <img src="../assets/location icon.png" alt="Location" class="me-2" /></span>1/21.New Bus stand
+            opposite<br />
+            Tirunelveli-627756
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const selectedServices = new Set();
+
+    document.getElementById('mainBookNowBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('serviceSelection').classList.remove('hidden');
+      document.getElementById('serviceSelection').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    function toggleService(card, serviceType) {
+      card.classList.toggle('selected');
+      card.classList.toggle('border-2');
+
+      if (card.classList.contains('selected')) {
+        selectedServices.add(serviceType);
+      } else {
+        selectedServices.delete(serviceType);
+      }
+    }
+
+    function bookSelectedServices() {
+      if (selectedServices.size === 0) {
+        alert('Please select at least one service to book');
+        return;
+      }
+
+      const services = Array.from(selectedServices).map(service =>
+        service === 'Appliance' ? 'Appliance Installation' : 'Electrical Repair'
+      ).join(' and ');
+
+      alert(`Booking ${services} service(s)!`);
+      window.location.href = './payment.html';
+    }
+  </script>
+</body>
+</html>
+
+

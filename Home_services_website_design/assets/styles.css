@@ -1,0 +1,257 @@
+/* Hero Section */
+
+.hero {
+  position: relative;
+  background-image: url("./Home services home page images.png");
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  color: #000;
+  overflow: hidden;
+}
+
+.corner-decoration-top,
+.corner-decoration-bottom {
+  width: 100px;
+  height: 100px;
+}
+
+.corner-decoration-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 15px solid #b74600;
+  border-left: 15px solid #b74600;
+}
+
+.corner-decoration-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-bottom: 15px solid #b74600;
+  border-right: 15px solid #b74600;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  right: 5%;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.search-section {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.search-bar {
+  display: flex;
+}
+
+.form-search {
+  border-radius: 30px 0 0 30px;
+
+  border: 2px solid black;
+}
+
+.search-button {
+  border-radius: 0 30px 30px 0;
+  border: 2px solid black;
+  background-color: #f18a4a;
+}
+
+.book-service-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: left;
+  margin: 10px 0;
+  min-height: 260px;
+  color: white;
+  overflow: hidden;
+}
+.electrician {
+  background-color: #006666;
+}
+.plumber {
+  background-color: #f4731c;
+}
+.painter {
+  background-color: #005b5c;
+}
+.service-img {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  object-fit: contain;
+  z-index: 1;
+  max-height: 200px;
+}
+.feature-text {
+  margin-top: 100px;
+  font-weight: bold;
+  z-index: 2;
+  position: relative;
+}
+.book-btn {
+  background-color: rgba(232, 225, 225, 0.2);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  position: relative;
+  z-index: 2;
+}
+
+/* All categories */
+.category-section {
+  padding: 20px;
+}
+.category-list {
+  border-right: 2px solid #ccc;
+  height: 100%;
+}
+.category-card img {
+  height: 200px;
+  object-fit: cover;
+}
+.view-all-btn {
+  background-color: #065858;
+  color: #ffffff;
+  font-size: 1.5em;
+}
+.service-card {
+  display: none;
+}
+
+/* testimonial */
+.testimonial-section {
+  background-color: #d2e6e6;
+}
+.testimonial-box {
+  border-radius: 15px;
+  padding: 30px;
+  border: 3px solid black;
+  margin: 20px 0;
+}
+.testimonial-img {
+  border-color: #f5c000;
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+.quote-icon {
+  font-size: 2.5em;
+  color: #000;
+  line-height: 1;
+}
+.star-rating {
+  color: #f5c000;
+  font-size: 24px;
+}
+
+.service-title {
+  text-align: center;
+  color: #155e63;
+  font-weight: bold;
+  margin: 40px 0 20px;
+}
+.service-card1 img {
+  width: 85%;
+  height: 250px;
+}
+.service-card1 h5 {
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .overlay-content {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  .hero {
+    height: 90vh;
+  }
+
+  .corner-decoration-top,
+  .corner-decoration-bottom {
+    width: 60px;
+    height: 60px;
+    border-width: 8px;
+  }
+
+  .service-img {
+    position: relative;
+    height: 100px;
+    max-width: 100%;
+    margin: 10px auto;
+    display: block;
+    top: 0;
+    right: 0;
+  }
+  .feature-text {
+    margin-top: 10px;
+    text-align: center;
+  }
+  .book-btn {
+    display: block;
+    margin: 10px auto;
+  }
+  .service-card {
+    text-align: center;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 425px) {
+  .overlay-content {
+    font-size: 1rem;
+  }
+
+  .search-section h2 {
+    font-size: 1.1rem;
+  }
+
+  .form-control {
+    border-radius: 30px;
+    margin-bottom: 0.5rem;
+  }
+
+  .btn {
+    border-radius: 30px;
+  }
+}
+
+.service-card1 img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.service-card1:hover {
+  cursor: pointer;
+}
+.category-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.category-card:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,41 @@
+ main {
+  background-color: #f8f9fa;
+}
+
+.enquiry-form {
+  background: linear-gradient(to right, #ffffff, #f0f0f0);
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+form {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+  border-radius: 8px;
+  padding: 10px 14px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #f0ad4e;
+  box-shadow: 0 0 8px rgba(240, 173, 78, 0.5);
+}
+
+.btn-submit {
+  background-color: #EE6611;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-submit:hover {
+  background-color: #ec971f;
+}

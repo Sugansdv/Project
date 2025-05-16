@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home_services_Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="./assets/style.css" rel="stylesheet" />
+  <link href="./assets/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand d-flex flex-column" href="#">
+          <img src="./assets/Logo image.png" alt="Logo" />
+          <span class="text-white">Home clean</span>
+        </a>
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="./index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/about.html">ABOUT US</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">SERVICES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/enquiry.html">ENQUIERY</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/login.html">LOG IN</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section" >
+      <div class="hero">
+        <div class="overlay-content text-center">
+          <div class="corner-decoration-top mt-2"></div>
+          <div class="corner-decoration-bottom mb-2"></div>
+          <h2 class="px-5">
+            "The magic thing about home is that it feels good to leave, and it
+            feels even better to come back."
+          </h2>
+        </div>
+
+        <div class="search-section">
+          <h2>Choose your service, get started</h2>
+          <div class="input-group search-bar mt-3">
+            <input type="text" class="form-control form-search" placeholder="Search here" />
+            <button class="btn btn-warning search-button">🔍</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="service-section"  id="services">
+      <div class="container text-center my-5">
+        <h2 class="fw-bold">WE PROVIDE ALL SERVICES AT HOME</h2>
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <div class="book-service-card electrician">
+              <img src="./assets/Home page image 1.png" class="service-img" alt="Electrician" />
+              <div class="feature-text">
+                <p class="mb-1">We provide experienced</p>
+                <p>electrician in your home</p>
+              </div>
+              <button class="book-btn">BOOK NOW</button>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="book-service-card plumber">
+              <img src="./assets/Home page image 2.png" class="service-img" alt="Plumber" />
+              <div class="feature-text">
+                <p class="mb-1">We provide experienced</p>
+                <p>plumber in your home</p>
+              </div>
+              <button class="book-btn">BOOK NOW</button>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="book-service-card painter">
+              <img src="./assets/home page image 3.png" class="service-img" alt="Painter" />
+              <div class="feature-text">
+                <p class="mb-1">We provide experienced</p>
+                <p>painter in your home</p>
+              </div>
+              <button class="book-btn">BOOK NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <form class="modal-content" id="bookingForm">
+            <div class="modal-header">
+              <h5 class="modal-title" id="bookingModalLabel">Book Service</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <input type="hidden" id="serviceType" />
+              <div class="mb-3">
+                <label for="userName" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="userName" required />
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" required pattern="[0-9]{10}" />
+              </div>
+              <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <textarea class="form-control" rows="2" id="address" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="datetime" class="form-label">Preferred Date & Time</label>
+                <input type="datetime-local" class="form-control" id="datetime" required />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success">
+                Confirm Booking
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="confirmationModalLabel">
+                Booking Status
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="confirmationMessage">
+              Booking confirmed! We will contact you soon.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<hr class="m-5">
+    <section class="category-section">
+      <div class="container-fluid py-4">
+        <div class="row">
+          <div class="col-md-3 category-list">
+            <h3><strong>ALL Categories</strong></h3>
+            <ul class="list-unstyled mt-4">
+              <li class="p-1 fs-5">
+                <a href="#" class="category-link text-decoration-none text-dark"
+                  data-category="all"><strong>All</strong></a>
+              </li>
+              <li class="p-1 fs-5">
+                <a href="#" class="category-link text-decoration-none text-dark"
+                  data-category="cleaning"><strong>Cleaning</strong></a>
+              </li>
+              <li class="p-1 fs-5">
+                <a href="#" class="category-link text-decoration-none text-dark" data-category="tv"><strong>Tv and
+                    Electronics</strong></a>
+              </li>
+              <li class="p-1 fs-5">
+                <a href="#" class="category-link text-decoration-none text-dark"
+                  data-category="plumbing"><strong>Plumbing</strong></a>
+              </li>
+              <li class="p-1 fs-5">
+                <a href="#" class="category-link text-decoration-none text-dark"
+                  data-category="electrical"><strong>Electrical</strong></a>
+              </li>
+              <li class="p-1 fs-5">
+                <a href="#" class="category-link text-decoration-none text-dark"
+                  data-category="painting"><strong>Painting</strong></a>
+              </li>
+              <li class="p-1 fs-5">
+                <a href="#" class="category-link text-decoration-none text-dark"
+                  data-category="moving"><strong>Moving</strong></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-9">
+            <div class="row" id="card-container">
+              <div class="col-md-4 mb-4 service-cat-card" data-category="cleaning" onclick="window.location.href='./pages/cleaning.html'" >
+                <div class="category-card border-0 cursor-pointer">
+                  <img src="./assets/Home cleaning image.png" class="card-img-top" alt="Home Cleaning" />
+                  <div class="card-body text-center">
+                    <h5><strong>Home cleaning</strong></h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4 service-cat-card" data-category="tv" onclick="window.location.href='./pages/future_assembly.html'" >
+                <div class="category-card border-0" >
+                  <img src="./assets/Furniture assembly image.png" class="card-img-top" alt="Furniture assembly" />
+                  <div class="card-body text-center">
+                    <h5><strong>Furniture assembly</strong></h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4 service-cat-card" data-category="painting" onclick="window.location.href='./pages/painting.html'" >
+                <div class="category-card border-0">
+                  <img src="./assets/Painting image.png" class="card-img-top" alt="Painting" />
+                  <div class="card-body text-center">
+                    <h5><strong>Painting</strong></h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4 service-cat-card" data-category="plumbing" onclick="window.location.href='./pages/plumbing.html'" >
+                <div class="category-card border-0">
+                  <img src="./assets/plumbing image.png" class="card-img-top" alt="Plumbing" />
+                  <div class="card-body text-center">
+                    <h5><strong>Plumbing</strong></h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4 service-cat-card" data-category="electrical" onclick="window.location.href='./pages/electrical.html'" >
+                <div class="category-card border-0">
+                  <img src="./assets/electrical image.png" class="card-img-top" alt="Electrical" />
+                  <div class="card-body text-center">
+                    <h5><strong>Electrical</strong></h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4 service-cat-card" data-category="moving" onclick="window.location.href='./pages/moving.html'" >
+                <div class="category-card border-0">
+                  <img src="./assets/moving image.png" class="card-img-top" alt="Moving" />
+                  <div class="card-body text-center">
+                    <h5><strong>Moving</strong></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-12 d-flex justify-content-end">
+                <button id="viewAllBtn" class="btn btn-outline-primary view-all-btn p-3 px-5">
+                  View All
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="popular-service">
+      <div class="container">
+        <h2 class="service-title mb-5">OUR POPULAR SERVICES</h2>
+        <div class="row text-center justify-content-center">
+          <div class="col-md-4 mb-4" onclick="window.location.href='./pages/officecleaning.html'">
+            <div class="service-card1">
+              <img src="./assets/Office cleaning image.png" alt="Office Cleaning" />
+              <h5>Office cleaning</h5>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4" onclick="window.location.href='./pages/outdoorcleaning.html'">
+            <div class="service-card1">
+              <img src="./assets/Outdoor cleaning image.png" alt="Outdoor Cleaning" />
+              <h5>Outdoor Cleaning</h5>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4" onclick="window.location.href='./pages/homerenovation.html'">
+            <div class="service-card1">
+              <img src="./assets/Home renovation image.png" alt="Home Renovation" />
+              <h5>Home Renovation</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial-section">
+      <div class="container text-center">
+        <h2 class="fw-bold fs-1 fs-md-3 pt-5">Here’s What Our</h2>
+        <h3 class="fw-bold fs-1 fs-md-3">happy customer are saying</h3>
+      </div>
+
+      <div class="container px-3 px-sm-5 pb-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-5 col-md-10 testimonial-box d-flex flex-column flex-md-row align-items-center me-lg-5">
+            <img src="./assets/Customer review image- 2.png" alt="Arun" class="testimonial-img me-md-4 mb-3 mb-md-0" />
+            <div>
+              <span class="quote-icon">“</span>
+              <p class="mb-0">
+                Hello Hi, Your Services are very good quality and its useful
+                to us.<br />
+                Thankyou so much For the Services.<br />
+                I used your home clean service.<br />
+                Its clean and neat work thank you so much.
+              </p>
+              <span class="quote-icon float-end">”</span>
+              <h5 class="fw-bold mt-3">Arun India</h5>
+              <div class="star-rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div
+            class="ms-lg-5 col-lg-5 col-md-10 testimonial-box d-flex flex-column flex-md-row align-items-center ms-lg-4">
+            <img src="./assets/Customer review image-1.png" alt="Mani" class="testimonial-img me-md-4 mb-3 mb-md-0" />
+            <div>
+              <span class="quote-icon">“</span>
+              <p class="mb-0">
+                Hello Hi, Your Services are very good quality and its useful
+                to us.<br />
+                Thankyou so much For the Services.<br />
+                I used your home clean service.<br />
+                Its clean and neat work thank you so much.
+              </p>
+              <span class="quote-icon float-end">”</span>
+              <h5 class="fw-bold mt-3">Mani India</h5>
+              <div class="star-rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <div class="logo-section">
+          <img src="./assets/Logo image.png" alt="Home Clean Service Logo" class="logo ms-5" />
+          <h2 style="margin-top: -20px">Home Clean</h2>
+          <div class="social-media m-3">
+            <img src="./assets/facebook image.png" alt="Facebook" />
+            <img src="./assets/instagram icon.png" alt="Instagram" />
+            <img src="./assets/Youtube icon.png" alt="Youtube" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>QUICK LINKS</h3>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./pages/about.html">About us</a></li>
+          <li><a href="./index.html">Services</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>ALL CATEGORIES</h3>
+        <ul>
+          <li><a href="./pages/cleaning.html">Cleaning</a></li>
+          <li><a href="./pages/homerenovation.html">Home Renovation</a></li>
+          <li><a href="./pages/plumbing.html">Plumbing</a></li>
+          <li><a href="./pages/electrical.html">Electrical</a></li>
+          <li><a href="./pages/painting.html">Painting</a></li>
+          <li><a href="./pages/moving.html">Moving</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>CONTACT US</h3>
+        <div class="contact-info">
+          <p>
+            <span><img src="./assets/call icon.png" alt="Call" class="me-2" /></span>+91 345 24 567 76
+          </p>
+          <p>
+            <span><img src="./assets/email icon.png" alt="Email" class="me-2" /></span>homecleanservice@gmail.com
+          </p>
+          <p>
+            <span><img src="./assets/website icon.png" alt="Website" class="me-2" /></span>www.homeclean.com
+          </p>
+          <p>
+            <span><img src="./assets/location icon.png" alt="Location" class="me-2" /></span>1/21.New Bus stand opposite<br /> Tirunelveli-627756
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./script/book_now.js"></script>
+  <script src="./script/category.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home_services_Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/style.css" rel="stylesheet" />
+  <link href="../assets/form.css" rel="stylesheet" />
+  
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand d-flex flex-column" href="#">
+          <img src="../assets/Logo image.png" alt="Logo" />
+          <span class="text-white">Home clean</span>
+        </a>
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="../index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">ABOUT US</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">SERVICES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./enquiry.html">ENQUIERY</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./login.html">LOG IN</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+  <section class="enquiry-form py-5">
+    <div class="container">
+      <div class="form-title text-center mb-4">ENQUIRY</div>
+      <form id="enquiryForm" autocomplete="off" novalidate class="mx-auto shadow p-4 rounded" style="max-width: 600px; background-color: #fff;">
+        <div class="mb-3">
+          <label for="name" class="form-label fw-bold">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter your name" required />
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label fw-bold">Phone Number</label>
+          <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" title="Enter 10 digit phone number" required />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label fw-bold">Email ID</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter your email" required />
+        </div>
+        <div class="mb-4">
+          <label for="message" class="form-label fw-bold">Message</label>
+          <textarea class="form-control" id="message" rows="4" placeholder="Enter your message" required></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-submit px-5 py-2 fw-bold">SUBMIT</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <div class="logo-section">
+          <img src="../assets/Logo image.png" alt="Home Clean Service Logo" class="logo ms-5" />
+          <h2 style="margin-top: -20px">Home Clean</h2>
+          <div class="social-media m-3">
+            <img src="../assets/facebook image.png" alt="Facebook" />
+            <img src="../assets/instagram icon.png" alt="Instagram" />
+            <img src="../assets/Youtube icon.png" alt="Youtube" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>QUICK LINKS</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./about.html">About us</a></li>
+          <li><a href="../index.html">Services</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>ALL CATEGORIES</h3>
+        <ul>
+          <li><a href="./cleaning.html">Cleaning</a></li>
+          <li><a href="./homerenovation.html">Home Renovation</a></li>
+          <li><a href="./plumbing.html">Plumbing</a></li>
+          <li><a href="./electrical.html">Electrical</a></li>
+          <li><a href="./painting.html">Painting</a></li>
+          <li><a href="./moving.html">Moving</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>CONTACT US</h3>
+        <div class="contact-info">
+          <p>
+            <span>
+              <img src="../assets/call icon.png" alt="Call" class="me-2" /></span>+91 345 24 567 76
+          </p>
+          <p>
+            <span>
+              <img src="../assets/email icon.png" alt="Email" class="me-2" /></span>homecleanservice@gmail.com
+          </p>
+          <p>
+            <span>
+              <img src="../assets/website icon.png" alt="Website" class="me-2" /></span>www.homeclean.com
+          </p>
+          <p>
+            <span>
+              <img src="../assets/location icon.png" alt="Location" class="me-2" /></span>1/21.New Bus stand
+            opposite<br />
+            Tirunelveli-627756
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('enquiryForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const enquiryData = { name, phone, email, message, timestamp: new Date().toISOString() };
+
+      let enquiries = [];
+      if (localStorage.getItem('enquiries')) {
+        enquiries = JSON.parse(localStorage.getItem('enquiries'));
+      }
+      enquiries.push(enquiryData);
+      localStorage.setItem('enquiries', JSON.stringify(enquiries));
+
+      alert('Enquiry submitted !');
+      this.reset();
+    });
+  </script>
+  <script src="./script/book_now.js"></script>
+  <script src="./script/category.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
