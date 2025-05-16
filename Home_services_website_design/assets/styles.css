@@ -237,6 +237,9 @@
   .btn {
     border-radius: 30px;
   }
+  .search-button {
+  height: 5.8vh;
+}
 }
 
 .service-card1 img:hover {
