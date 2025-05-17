@@ -151,7 +151,7 @@ function updateNavbar(username) {
     document.getElementById("logout-btn").addEventListener("click", (e) => {
       e.preventDefault();
       localStorage.removeItem("currentUser");
-      window.location.href = "../index.html";
+      window.location.href = "../Project/Home_services_website_design/index.html";
     });
   }
 }
