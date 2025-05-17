@@ -151,7 +151,7 @@ function updateNavbar(username) {
     document.getElementById("logout-btn").addEventListener("click", (e) => {
       e.preventDefault();
       localStorage.removeItem("currentUser");
-      window.location.href = "../Project/Home_services_website_design/index.html";
+      window.location.href = "../Home_services_website_design/index.html";
     });
   }
 }
@@ -162,7 +162,7 @@ function checkLoginStatus() {
     updateNavbar(currentUser.name);
     
     if (window.location.pathname.includes("login.html")) {
-      window.location.href = "../Project/Home_services_website_design/index.html";
+      window.location.href = "../Home_services_website_design/index.html";
     }
   }
 }
