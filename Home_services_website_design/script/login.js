@@ -162,7 +162,7 @@ function checkLoginStatus() {
     updateNavbar(currentUser.name);
     
     if (window.location.pathname.includes("login.html")) {
-      window.location.href = "../index.html";
+      window.location.href = "../Project/Home_services_website_design/index.html";
     }
   }
 }
