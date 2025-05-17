@@ -9,6 +9,9 @@
     .navbar {
       background-color: #ee6611;
     }
+    body {
+    padding-top: 70px; 
+  }
 
     .navbar-brand {
       font-size: 1.3em;
@@ -169,3 +172,7 @@
         width: 30%;
       }
     }
+    main{
+      margin-top: 50px;
+    }
+   

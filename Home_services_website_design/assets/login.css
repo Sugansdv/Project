@@ -1,0 +1,48 @@
+main {
+  background: #f8f9fa;
+  padding: 50px 0;
+}
+
+#form-container {
+  background-color: #ffffff;
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+form input {
+  border-radius: 10px;
+}
+
+form a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
+
+#login-error,
+#register-error {
+  font-size: 1.1 em;
+}
+
+@media (max-width: 576px) {
+  #form-container {
+    padding: 20px 15px;
+  }
+}
+#form-container {
+    transition: all 0.3s ease;
+}
+
+.success-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: none;
+}

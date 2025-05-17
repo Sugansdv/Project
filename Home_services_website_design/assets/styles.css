@@ -40,7 +40,7 @@
   background: rgba(255, 255, 255, 0.9);
   font-size: 1.5rem;
   font-weight: bold;
-  padding: 1rem;
+  padding: 1.5em;
   border-radius: 10px;
 }
 
@@ -82,6 +82,11 @@
   color: white;
   overflow: hidden;
 }
+.book-service-card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
 .electrician {
   background-color: #006666;
 }
@@ -115,6 +120,10 @@
   position: relative;
   z-index: 2;
 }
+.book-btn:hover{
+  transform: scaleX(1.2);
+  background-color: #000;
+}
 
 /* All categories */
 .category-section {
@@ -135,6 +144,9 @@
 }
 .service-card {
   display: none;
+}
+.card-body h5{
+  margin-top: 1em;
 }
 
 /* testimonial */
@@ -257,4 +269,14 @@
 }
 .category-card:hover {
   cursor: pointer;
+}
+.category-link:hover{
+  text-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+.logo-foot{
+  cursor: pointer;
+}
+.testimonial-box:hover{
+  transform: scale(1.1);
+   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
 }
