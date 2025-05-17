@@ -120,7 +120,7 @@ loginForm.addEventListener("submit", (e) => {
     
     updateNavbar(matchedUser.name);
     
-    loginError.textContent = "Login successful! Redirecting...";
+    loginError.textContent = "Login successful!";
     loginError.style.color = "#28a745";
     loginError.style.display = "block";
     
