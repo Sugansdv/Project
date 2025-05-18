@@ -46,3 +46,22 @@ form a:hover {
     margin-top: 20px;
     display: none;
 }
+
+
+.password-container input {
+  padding-right: 40px; 
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6c757d;
+  z-index: 10;
+}
+
+.toggle-password:hover {
+  color: #495057;
+}
