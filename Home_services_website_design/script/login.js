@@ -125,7 +125,7 @@ loginForm.addEventListener("submit", (e) => {
     loginError.style.display = "block";
     
     setTimeout(() => {
-      window.location.href = "../index.html";
+      window.location.href = "https://sugansdv.github.io/Project/Home_services_website_design/index.html";
     }, 1500);
   } else {
     loginError.textContent = "Invalid email or password.";
@@ -151,7 +151,7 @@ function updateNavbar(username) {
     document.getElementById("logout-btn").addEventListener("click", (e) => {
       e.preventDefault();
       localStorage.removeItem("currentUser");
-      window.location.href = "../index.html";
+      window.location.href = "https://sugansdv.github.io/Project/Home_services_website_design/index.html";
     });
   }
 }
@@ -162,7 +162,7 @@ function checkLoginStatus() {
     updateNavbar(currentUser.name);
     
     if (window.location.pathname.includes("login.html")) {
-      window.location.href = "../index.html";
+      window.location.href = "https://sugansdv.github.io/Project/Home_services_website_design/index.html";
     }
   }
 }
