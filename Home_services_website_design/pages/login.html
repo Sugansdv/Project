@@ -14,6 +14,11 @@
     .password-field i.toggle-password {
       cursor: pointer;
       font-size: 1.2rem;
+      position: absolute;
+      top: 50px!important;
+    }
+    label{
+      font-weight: bold;
     }
   </style>
 </head>
@@ -64,7 +69,7 @@
           </div>
           <div class="password-field position-relative mb-3">
             <label for="confirm-password" class="form-label">Password</label>
-            <input type="password" id="login-password" class="form-control" placeholder="Password" />
+            <input type="password" id="login-password" class="form-control" required />
             <i class="bi bi-eye-slash toggle-password position-absolute top-50 end-0 translate-middle-y me-3"
               onclick="togglePassword(this, 'login-password')"></i>
           </div>
@@ -92,15 +97,15 @@
             <input type="email" class="form-control" id="register-email" required />
           </div>
           <div class="password-field position-relative mb-3">
-            <label for="confirm-password" class="form-label">Confirm Password</label>
-            <input type="password" id="register-password" class="form-control" placeholder="Password" />
+            <label for="confirm-password" class="form-label">Password</label>
+            <input type="password" id="register-password" class="form-control" required />
             <i class="bi bi-eye-slash toggle-password position-absolute top-50 end-0 translate-middle-y me-3"
               onclick="togglePassword(this, 'register-password')"></i>
           </div>
 
           <div class="password-field position-relative mb-3">
             <label for="confirm-password" class="form-label">Confirm Password</label>
-            <input type="password" id="confirm-password" class="form-control" placeholder="Confirm Password" />
+            <input type="password" id="confirm-password" class="form-control" required />
             <i class="bi bi-eye-slash toggle-password position-absolute top-50 end-0 translate-middle-y me-3"
               onclick="togglePassword(this, 'confirm-password')"></i>
           </div>
