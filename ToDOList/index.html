@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project_8</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+    .sv-btn {
+      background-color: darkgreen;
+      color: white;
+    }
+    .delete-btn {
+      background-color: red;
+      color: white;
+    }
+  </style>
+</head>
+
+<body class="bg-light py-4">
+  <div class="container">
+    <h2 class="mb-4 text-center">Task Manager / To-Do List</h2>
+
+    <form id="taskForm" class="mb-4">
+      <input type="hidden" id="editIndex" />
+
+      <div class="mb-3">
+        <label for="task" class="form-label">Task</label>
+        <input type="text" id="task" class="form-control" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="category" class="form-label">Category</label>
+        <select id="category" class="form-select" required>
+          <option value="">Select</option>
+          <option>Work</option>
+          <option>Personal</option>
+          <option>Study</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="dueDate" class="form-label">Due Date</label>
+        <input type="date" id="dueDate" class="form-control" required />
+      </div>
+
+      <button type="submit" class="btn sv-btn">Save Task</button>
+    </form>
+
+    <h4>Filter Tasks</h4>
+    <div class="row mb-3">
+      <div class="col-md-6 mb-2">
+        <label for="statusFilter" class="form-label">Status</label>
+        <select id="statusFilter" class="form-select">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="incomplete">Incomplete</option>
+        </select>
+      </div>
+
+      <div class="col-md-6 mb-2">
+        <label for="categoryFilter" class="form-label">Category</label>
+        <select id="categoryFilter" class="form-select">
+          <option value="all">All</option>
+          <option>Work</option>
+          <option>Personal</option>
+          <option>Study</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="table-secondary">
+          <tr>
+            <th>Task</th>
+            <th>Category</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="taskTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    const taskForm = document.getElementById("taskForm");
+    const taskTable = document.getElementById("taskTable");
+    const statusFilter = document.getElementById("statusFilter");
+    const categoryFilter = document.getElementById("categoryFilter");
+
+    function renderTable() {
+      let filteredTasks = [...tasks];
+      const status = statusFilter.value;
+      const category = categoryFilter.value;
+
+      if (status !== "all") {
+        filteredTasks = filteredTasks.filter((task) =>
+          status === "completed" ? task.completed : !task.completed
+        );
+      }
+
+      if (category !== "all") {
+        filteredTasks = filteredTasks.filter((task) => task.category === category);
+      }
+
+      filteredTasks.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
+
+      taskTable.innerHTML = "";
+
+      filteredTasks.forEach((task, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td class="${task.completed ? "completed" : ""}">${task.text}</td>
+          <td>${task.category}</td>
+          <td>${task.dueDate}</td>
+          <td>
+            <input type="checkbox" ${task.completed ? "checked" : ""} onchange="toggleComplete(${index})">
+          </td>
+          <td>
+            <button class="btn btn-sm btn-primary me-1" onclick="editTask(${index})">Edit</button>
+            <button class="btn btn-sm delete-btn" onclick="deleteTask(${index})">Delete</button>
+          </td>
+        `;
+        taskTable.appendChild(row);
+      });
+    }
+
+    taskForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const text = document.getElementById("task").value.trim();
+      const category = document.getElementById("category").value;
+      const dueDate = document.getElementById("dueDate").value;
+      const editIndex = document.getElementById("editIndex").value;
+
+      const newTask = { text, category, dueDate, completed: false };
+
+      if (editIndex === "") {
+        tasks.push(newTask);
+      } else {
+        tasks[editIndex] = { ...tasks[editIndex], ...newTask };
+      }
+
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      renderTable();
+      taskForm.reset();
+      document.getElementById("editIndex").value = "";
+    });
+
+    function editTask(index) {
+      const task = tasks[index];
+      document.getElementById("task").value = task.text;
+      document.getElementById("category").value = task.category;
+      document.getElementById("dueDate").value = task.dueDate;
+      document.getElementById("editIndex").value = index;
+    }
+
+    function deleteTask(index) {
+      if (confirm("Delete this task?")) {
+        tasks.splice(index, 1);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        renderTable();
+      }
+    }
+
+    function toggleComplete(index) {
+      tasks[index].completed = !tasks[index].completed;
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      renderTable();
+    }
+
+    statusFilter.addEventListener("change", renderTable);
+    categoryFilter.addEventListener("change", renderTable);
+
+    renderTable();
+  </script>
+
+</body>
+</html>
