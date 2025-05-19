@@ -62,7 +62,8 @@
             <label for="login-email" class="form-label">Email address</label>
             <input type="email" class="form-control" id="login-email" required />
           </div>
-          <div class="password-field position-relative">
+          <div class="password-field position-relative mb-3">
+            <label for="confirm-password" class="form-label">Password</label>
             <input type="password" id="login-password" class="form-control" placeholder="Password" />
             <i class="bi bi-eye-slash toggle-password position-absolute top-50 end-0 translate-middle-y me-3"
               onclick="togglePassword(this, 'login-password')"></i>
@@ -90,13 +91,15 @@
             <label for="register-email" class="form-label">Email address</label>
             <input type="email" class="form-control" id="register-email" required />
           </div>
-          <div class="password-field position-relative">
+          <div class="password-field position-relative mb-3">
+            <label for="confirm-password" class="form-label">Confirm Password</label>
             <input type="password" id="register-password" class="form-control" placeholder="Password" />
             <i class="bi bi-eye-slash toggle-password position-absolute top-50 end-0 translate-middle-y me-3"
               onclick="togglePassword(this, 'register-password')"></i>
           </div>
 
-          <div class="password-field position-relative mt-2">
+          <div class="password-field position-relative mb-3">
+            <label for="confirm-password" class="form-label">Confirm Password</label>
             <input type="password" id="confirm-password" class="form-control" placeholder="Confirm Password" />
             <i class="bi bi-eye-slash toggle-password position-absolute top-50 end-0 translate-middle-y me-3"
               onclick="togglePassword(this, 'confirm-password')"></i>
