@@ -4,12 +4,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Overview</title>
+  <title>Employeee's.Payslip Overview</title>  
+  <link rel="icon" href="./assets/Class.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./assets/css/styles.css">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+  .meetings {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .meeting-card {
+    margin-top: 5px;
+    border-radius: 6px;
+  }
+
+  .meetings.limited {
+    max-height: none;
+    overflow: hidden;
+  }
+</style>
+
 </head>
 
 <body>
@@ -213,9 +234,16 @@
       }
 
       function renderMeetings(showAll = false) {
-        const meetingsContainer = document.querySelector(".meetings");
-        meetingsContainer.innerHTML = "";
-        const meetingsToShow = showAll ? meetingList : meetingList.slice(0, 4);
+  const meetingsContainer = document.querySelector(".meetings");
+  meetingsContainer.innerHTML = "";
+
+  if (!showAll && meetingList.length > 4) {
+    meetingsContainer.classList.add("limited");
+  } else {
+    meetingsContainer.classList.remove("limited");
+  }
+
+  const meetingsToShow = showAll ? meetingList : meetingList.slice(0, 4);
 
         meetingsToShow.forEach((meeting, index) => {
           const card = document.createElement("div");
@@ -231,7 +259,7 @@
           dateText.textContent = formatDate(meeting.date);
 
           const removeBtn = document.createElement("button");
-          removeBtn.className = "btn btn-sm btn-danger mt-1";
+          removeBtn.className = "btn btn-sm mt-1";
           removeBtn.textContent = "X";
           removeBtn.onclick = () => {
             meetingList.splice(index, 1);
