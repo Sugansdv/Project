@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Overview</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block sidebar">
+        <div class="position-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item mt-2">
+              <a class="nav-link active" href="./index.html">
+                <img src="./assets/Overview.png" alt="Overview" width="20" class="me-2"> Overview
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/payrolll.html">
+                <img src="./assets/Payroll.png" alt="Payroll" width="20" class="me-2"> Payroll
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/payslip.html">
+                <img src="./assets/Payroll.png" alt="Payslip" width="20" class="me-2"> Payslip
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+<div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+  <div class="offcanvas-header bg-dark text-white">
+    <h5 class="offcanvas-title" id="mobileSidebarLabel">Menu</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body sidebar">
+    <ul class="nav flex-column">
+      <li class="nav-item mt-2">
+        <a class="nav-link active" href="./index.html">
+          <img src="./assets/Overview.png" alt="Overview" width="20" class="me-2">
+          Overview
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./pages/payrolll.html">
+          <img src="./assets/Payroll.png" alt="Payroll" width="20" class="me-2">
+          Payroll
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./pages/payslip.html">
+          <img src="./assets/Payroll.png" alt="Payslip" width="20" class="me-2">
+          Payslip
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+      <main class="col-md-10 ms-sm-auto col-lg-10 px-md-4 mt-1">
+           <div class="top-bar d-flex justify-content-between align-items-center flex-wrap">
+          <div class="d-flex align-items-center">
+            <button class="btn btn-outline-dark d-md-none me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
+              <i class="bi bi-list"></i>
+            </button>
+            <div class="fs-4 fw-bold">Good Morning !!!</div>
+          </div>
+          <div class="d-flex align-items-center gap-4 mt-2 mt-md-0">
+            <div class="search-wrapper">
+              <input type="text" class="form-control form-control-sm" placeholder="Search">
+              <i class="bi bi-search search-icon"></i>
+            </div>
+            <img src="./assets/notification.png" alt="Notification" width="20" class="me-2">
+            <img src="./assets/Profile.png" alt="Profile" class="profile-img">
+          </div>
+        </div>
+
+        <section class="row2">
+          <div class="row cards-row g-3">
+            <div class="col-md-3 col-sm-6">
+              <div class="card d-flex align-items-center flex-row p-3 gap-3">
+                <div class="icon-circle">
+                  <img src="./assets/Total.png" alt="Total" class="img-card">
+                </div>
+                <div class="fw-bold">Total Employees</div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="card d-flex align-items-center flex-row p-3 gap-3">
+                <div class="icon-circle">
+                  <img src="./assets/no of leave.png" alt="Leave" class="img-card">
+                </div>
+                <div class="fw-bold">Number Of Leave</div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="card d-flex align-items-center flex-row p-3 gap-3">
+                <div class="icon-circle">
+                  <img src="./assets/add.png" alt="add" class="img-card">
+                </div>
+                <div class="fw-bold">New Employee’s</div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="card d-flex align-items-center flex-row p-3 gap-3">
+                <div class="icon-circle">
+                  <img src="./assets/holiday.png" alt="holiday" class="img-card">
+                </div>
+                <div class="fw-bold">Holiday of this Year</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-lg-7 calendar">
+              <h5 class="my-3 px-2 fw-bold">Calendar</h5>
+              <div id="calendar"></div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="my-3 px-2 fw-bold">Upcoming Meetings</h5>
+                <a href="#" class="text-decoration-none view-all">View All</a>
+              </div>
+              <div class="meetings"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        
+
+      const calendarEl = document.getElementById('calendar');
+      const today = new Date().toISOString().split('T')[0];
+      const meetingList = [];
+
+      const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        height: 380,
+        selectable: true,
+        headerToolbar: {
+          left: 'title',
+          center: '',
+          right: 'prev,next'
+        },
+        dateClick: function (info) {
+          const clickedDate = info.dateStr;
+
+          if (clickedDate < today) {
+            alert("You cannot add a meeting before today's date.");
+            return;
+          }
+
+          const title = prompt("Enter Meeting Title:");
+          if (!title) return;
+
+          const time = prompt("Enter Meeting Time (e.g. 10:00 AM):");
+          if (!time) return;
+
+          const meeting = {
+            title: `${title} - ${time}`,
+            date: clickedDate,
+          };
+
+          calendar.addEvent({
+            title: meeting.title,
+            start: clickedDate,
+            allDay: true
+          });
+
+          meetingList.push(meeting);
+          renderMeetings();
+        },
+        events: [
+          { title: 'Client Meeting - 9.00 AM', date: '2025-05-30' },
+          { title: 'Team Meeting - 12.00 PM', date: '2025-06-02' },
+          { title: 'HR Interview - 2.00 PM', date: '2025-06-04' },
+          { title: 'Client Interview - 4.00 PM', date: '2025-06-10' }
+        ]
+      });
+
+      calendar.render();
+
+      calendar.getEvents().forEach(ev => {
+        meetingList.push({
+          title: ev.title,
+          date: ev.startStr
+        });
+      });
+
+      function formatDate(dateStr) {
+        const options = { weekday: 'short', month: 'short', day: 'numeric' };
+        return new Date(dateStr).toLocaleDateString(undefined, options);
+      }
+
+      function renderMeetings(showAll = false) {
+        const meetingsContainer = document.querySelector(".meetings");
+        meetingsContainer.innerHTML = "";
+        const meetingsToShow = showAll ? meetingList : meetingList.slice(0, 4);
+
+        meetingsToShow.forEach((meeting, index) => {
+          const card = document.createElement("div");
+          card.className = "meeting-card d-flex justify-content-between align-items-center p-1";
+
+          const info = document.createElement("div");
+          info.textContent = meeting.title;
+
+          const rightSide = document.createElement("div");
+          rightSide.className = "d-flex flex-column align-items-end";
+
+          const dateText = document.createElement("small");
+          dateText.textContent = formatDate(meeting.date);
+
+          const removeBtn = document.createElement("button");
+          removeBtn.className = "btn btn-sm btn-danger mt-1";
+          removeBtn.textContent = "X";
+          removeBtn.onclick = () => {
+            meetingList.splice(index, 1);
+            calendar.getEvents().forEach(event => {
+              if (event.title === meeting.title && event.startStr === meeting.date) {
+                event.remove();
+              }
+            });
+            renderMeetings(showAll);
+          };
+
+          rightSide.appendChild(dateText);
+          rightSide.appendChild(removeBtn);
+
+          card.appendChild(info);
+          card.appendChild(rightSide);
+          meetingsContainer.appendChild(card);
+        });
+      }
+
+      renderMeetings();
+
+      const viewAllLink = document.querySelector(".view-all");
+      viewAllLink.addEventListener("click", e => {
+        e.preventDefault();
+        const isShowingAll = viewAllLink.textContent === "View Less";
+        renderMeetings(!isShowingAll);
+        viewAllLink.textContent = isShowingAll ? "View All" : "View Less";
+      });
+    });
+  </script>
+</body>
+
+</html>

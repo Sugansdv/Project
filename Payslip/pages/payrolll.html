@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>payroll</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+
+  <style>
+    .sidebar {
+      background-color: #455a64;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .sidebar .nav-link {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .sidebar .nav-link.active {
+      color: #f8cc14;
+    }
+   
+
+    .content {
+      padding: 40px;
+    }
+
+    .form-box {
+      background-color: #ffeba8;
+      padding: 30px;
+      border-radius: 10px;
+    }
+  .form-control{
+      background-color: transparent;
+      border: 2px solid gray
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #f8cc14;
+      background-color: white;
+    }
+
+    .btn-yellow {
+      background-color:  #f8cc14;
+      color: black;
+      font-weight: bold;
+    }
+
+    .btn-dark-custom {
+      background-color: #455a64;
+      color: white;
+    }
+
+    .header-buttons .btn {
+      margin-left: 10px;
+    }
+
+    @media (max-width: 425px) {
+  .content {
+    padding: 20px 10px;
+  }
+
+  .form-box {
+    padding: 20px 15px;
+  }
+
+  .header-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header-buttons .btn {
+    margin-left: 0;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .form-label {
+    font-size: 0.9rem;
+  }
+
+  .form-control {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+}
+
+
+   
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block sidebar">
+        <div class="position-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item mt-2">
+              <a class="nav-link" href="../index.html">
+                <img src="../assets/Overview.png" alt="Overview" width="20" class="me-2"> Overview
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./payrolll.html">
+                <img src="../assets/Payroll.png" alt="Payroll" width="20" class="me-2"> Payroll
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./payslip.html">
+                <img src="../assets/Payroll.png" alt="Payslip" width="20" class="me-2"> Payslip
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+        <div class="offcanvas-header bg-dark text-white">
+          <h5 class="offcanvas-title" id="mobileSidebarLabel">Menu</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body sidebar">
+          <ul class="nav flex-column">
+            <li class="nav-item mt-2">
+              <a class="nav-link" href="../index.html">
+                <img src="../assets/Overview.png" alt="Overview" width="20" class="me-2"> Overview
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./payrolll.html">
+                <img src="../assets/Payroll.png" alt="Payroll" width="20" class="me-2"> Payroll
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./payslip.html">
+                <img src="../assets/Payroll.png" alt="Payslip" width="20" class="me-2"> Payslip
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-10 content">
+         <button class="btn btn-outline-dark d-md-none me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
+      <i class="bi bi-list"></i>
+    </button>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h3>Payroll Details</h3>
+          <div class="header-buttons">
+            <button class="btn btn-dark-custom">This Month <i class="bi bi-calendar3"></i> </button>
+            <button class="btn btn-yellow">Download</button>
+          </div>
+        </div>
+
+        <div class="form-box">
+          <form>
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label class="form-label">Employee Name</label>
+                <input type="text" class="form-control" id="empName" />
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Employee Role</label>
+                <input type="text" class="form-control" id="empRole" />
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Employee Id</label>
+                <input type="text" class="form-control" id="empId" />
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label class="form-label">Date</label>
+                <input type="date" class="form-control" id="empDate" />
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Basic Salary</label>
+                <input type="number" class="form-control" id="basicSalary" />
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Total Salary</label>
+                <input type="number" class="form-control" id="totalSalary" />
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label class="form-label">No of Working Days</label>
+                <input type="number" class="form-control" id="workingDays" />
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Total Present Days</label>
+                <input type="number" class="form-control" id="presentDays" />
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Total Leave Days</label>
+                <input type="number" class="form-control" id="leaveDays" />
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <label class="form-label">Additions</label>
+                <input type="number" class="form-control" id="additions" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Deductions</label>
+                <input type="number" class="form-control" id="deductions" />
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-yellow me-2">Submit Payroll</button>
+              <button type="reset" class="btn btn-dark-custom">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const data = {
+        name: document.getElementById("empName").value,
+        role: document.getElementById("empRole").value,
+        id: document.getElementById("empId").value,
+        date: document.getElementById("empDate").value,
+        basicSalary: document.getElementById("basicSalary").value,
+        totalSalary: document.getElementById("totalSalary").value,
+        workingDays: document.getElementById("workingDays").value,
+        presentDays: document.getElementById("presentDays").value,
+        leaveDays: document.getElementById("leaveDays").value,
+        additions: document.getElementById("additions").value,
+        deductions: document.getElementById("deductions").value
+      };
+
+      localStorage.setItem("payrollData", JSON.stringify(data));
+      window.location.href = "./payslip.html";
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
