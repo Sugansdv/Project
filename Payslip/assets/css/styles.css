@@ -38,7 +38,6 @@
       border: none;
       border-radius: 12px;
       padding: 20px;
-      height: 12vh;
       margin-bottom: 10px;
     }
 
@@ -168,7 +167,7 @@
       justify-content: center;
     }
     .fc .fc-toolbar-chunk button:hover{
-      background-color: gray !important;
+      background-color: orange !important;
       color: white !important;
 
     }
